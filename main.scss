@@ -30,6 +30,7 @@
 $paper: #DDC;
 $margin: 5px;
 $iphone5: 320px;
+$bubble-font-size: 24px;
 
 .bubble{
   border-radius: 50%;
@@ -79,6 +80,22 @@ body{
     div{
       width: $bubble-size;
       height: $bubble-size;
+      color: white;
+      overflow: hidden;
+      font-size: $bubble-font-size;
+      line-height: 1;
+      &.potion-green{
+        background: green;
+      }
+      &.potion-red{
+        background: red;
+      }
+      &.potion-blue{
+        background: blue;
+      }
+      &.potion-neutral{
+        background: gray;
+      }
     }
     .results-tree__element{
       vertical-align: top;
@@ -86,6 +103,7 @@ body{
     }
   }
 }
+
 
 .answer-grid{
   display: table;
@@ -106,5 +124,5 @@ body{
   }
 }
 
-
-@include results( "violet", "green", "sienna", "gold", "blue", "tan", "red", "dimgray")
+ 
+@include results( purple, green, sienna, gold, blue, tan, red, dimgray)

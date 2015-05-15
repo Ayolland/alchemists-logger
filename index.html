@@ -6,10 +6,10 @@
 </head>
 <body id="index">
   <div id="controls" class="controls">
-    <form class="control-group">
+    <form class="control-group" id="test_potion">
       <h3 class="control-group__title">drink / test</h3>
-      <select class="control-group__select">
-        <option selected disabled>?</option>
+      <select class="control-group__select" id="test_potion__ingredient1">
+        <option selected disabled>Ingredient</option>
         <option value="mushroom">Mushroom</option>
         <option value="fern">Fern</option>
         <option value="toad">Toad</option>
@@ -22,8 +22,8 @@
       <div class="control-group__operator">
         +
       </div>
-      <select class="control-group__select">
-        <option selected disabled>?</option>
+      <select class="control-group__select" id="test_potion__ingredient2">
+        <option selected disabled>Ingredient</option>
         <option value="mushroom">Mushroom</option>
         <option value="fern">Fern</option>
         <option value="toad">Toad</option>
@@ -36,21 +36,22 @@
       <div class="control-group__operator">
         =
       </div>
-      <select class="control-group__select">
-        <option selected disabled>??</option>
-        <option value="blue-plus">Blue +</option>
-        <option value="blue-minus">Blue -</option>
-        <option value="blue-plus">Red +</option>
-        <option value="blue-minus">Red -</option>
-        <option value="blue-plus">Green +</option>
-        <option value="blue-minus">Green -</option>
+      <select class="control-group__select" id="test_potion__result">
+        <option selected disabled>Result</option>
+        <option value="blue+">Blue +</option>
+        <option value="blue-">Blue -</option>
+        <option value="red+">Red +</option>
+        <option value="red-">Red -</option>
+        <option value="green+">Green +</option>
+        <option value="green-">Green -</option>
+        <option value="neutralX">Neutral</option>
       </select>
-      <input type="submit" value="Go" class="control-group__submit">
+      <input type="submit" value="Go" class="control-group__submit" id="testPotion__submit">
     </form>
-    <form class="control-group">
+    <form class="control-group" id="sell_potion">
       <h3 class="control-group__title">sell</h3>
-      <select class="control-group__select">
-        <option selected disabled>?</option>
+      <select class="control-group__select" id="sell_potion__ingredient1">
+        <option selected disabled>Ingredient</option>
         <option value="mushroom">Mushroom</option>
         <option value="fern">Fern</option>
         <option value="toad">Toad</option>
@@ -63,8 +64,8 @@
       <div class="control-group__operator">
         +
       </div>
-      <select class="control-group__select">
-        <option selected disabled>?</option>
+      <select class="control-group__select" id="sell_potion__ingredient2">
+        <option selected disabled>Ingredient</option>
         <option value="mushroom">Mushroom</option>
         <option value="fern">Fern</option>
         <option value="toad">Toad</option>
@@ -75,18 +76,23 @@
         <option value="feather">Feather</option>
       </select>
       <div class="control-group__operator">
-        =
+        (
       </div>
-      <select class="control-group__select">
-        <option selected disabled>??</option>
-        <option value="blue-plus">Blue +</option>
-        <option value="blue-minus">Blue -</option>
-        <option value="blue-plus">Red +</option>
-        <option value="blue-minus">Red -</option>
-        <option value="blue-plus">Green +</option>
-        <option value="blue-minus">Green -</option>
+      <select class="control-group__select" id="sell_potion__target">
+        <option selected disabled>Target</option>
+        <option value="blue+">Blue +</option>
+        <option value="blue-">Blue -</option>
+        <option value="red+">Red +</option>
+        <option value="red-">Red -</option>
+        <option value="green-">Green +</option>
+        <option value="green+">Green -</option>
+        <option value="neutralX">Neutral</option>
       </select>
-      <select class="control-group__select">
+      <div class="control-group__operator">
+        )=
+      </div>
+      <select class="control-group__select" id="sell_potion__result">
+        <option selected disabled>Result</option>
         <option value="good">Exact Match</option>
         <option value="okay">Correct +/-</option>
         <option value="neutral">No +/-</option>
@@ -95,9 +101,9 @@
       <input type="submit" value="Go" class="control-group__submit">
     </form>
     <form class="control-group">
-      <h3 class="control-group__title">Debunk / Periscope</h3>
-      <select class="control-group__select">
-        <option selected disabled>?</option>
+      <h3 class="control-group__title" id="debunk_proof">Debunk / Periscope</h3>
+      <select class="control-group__select" id="debunk_proof__ingredient1">
+        <option selected disabled>Ingredient</option>
         <option value="mushroom">Mushroom</option>
         <option value="fern">Fern</option>
         <option value="toad">Toad</option>
@@ -116,14 +122,15 @@
       <div class="control-group__operator">
         =
       </div>
-      <select class="control-group__select">
-        <option selected disabled>??</option>
-        <option value="blue-plus">Blue +</option>
-        <option value="blue-minus">Blue -</option>
-        <option value="blue-plus">Red +</option>
-        <option value="blue-minus">Red -</option>
-        <option value="blue-plus">Green +</option>
-        <option value="blue-minus">Green -</option>
+      <select class="control-group__select" id="debunk_proof__result">
+        <option selected disabled>Result</option>
+        <option value="blue+">Blue +</option>
+        <option value="blue-">Blue -</option>
+        <option value="red+">Red +</option>
+        <option value="red-">Red -</option>
+        <option value="green-">Green +</option>
+        <option value="green+">Green -</option>
+        <option value="neutralX">Neutral</option>
       </select>
       <input type="submit" value="Go" class="control-group__submit">
     </form>
@@ -131,63 +138,63 @@
   <div id="tree" class="results-tree">
     
     <div class="results-tree__row">
-      <div class="results-tree__result bubble purple-border dimgray-back"></div>
+      <div class="results-tree__result bubble mushroom feather purple-border dimgray-back"></div>
     </div>                             
                                        
     <div class="results-tree__row">    
-      <div class="results-tree__result bubble purple-border red-back"></div>
-      <div class="results-tree__result bubble green-border dimgray-back"></div>
+      <div class="results-tree__result bubble mushroom scorpion purple-border red-back"></div>
+      <div class="results-tree__result bubble fern feather green-border dimgray-back"></div>
     </div>                             
                                        
     <div class="results-tree__row">    
-      <div class="results-tree__result bubble purple-border tan-back"></div>
-      <div class="results-tree__result bubble green-border red-back"></div>
-      <div class="results-tree__result bubble sienna-border dimgray-back"></div>
+      <div class="results-tree__result bubble mushroom root purple-border tan-back"></div>
+      <div class="results-tree__result bubble fern scorpion green-border red-back"></div>
+      <div class="results-tree__result bubble toad feather sienna-border dimgray-back"></div>
     </div>                             
                                        
     <div class="results-tree__row">    
-      <div class="results-tree__result bubble purple-border blue-back"></div>
-      <div class="results-tree__result bubble green-border tan-back"></div>
-      <div class="results-tree__result bubble sienna-border red-back"></div>
-      <div class="results-tree__result bubble gold-border dimgray-back"></div>
+      <div class="results-tree__result bubble mushroom flower purple-border blue-back"></div>
+      <div class="results-tree__result bubble fern root green-border tan-back"></div>
+      <div class="results-tree__result bubble toad scorpion sienna-border red-back"></div>
+      <div class="results-tree__result bubble foot feather gold-border dimgray-back"></div>
     </div>                             
                                        
     <div class="results-tree__row">    
-      <div class="results-tree__result bubble purple-border gold-back"></div>
-      <div class="results-tree__result bubble green-border blue-back"></div>
-      <div class="results-tree__result bubble sienna-border tan-back"></div>
-      <div class="results-tree__result bubble gold-border red-back"></div>
-      <div class="results-tree__result bubble blue-border dimgray-back"></div>
+      <div class="results-tree__result bubble mushroom foot purple-border gold-back"></div>
+      <div class="results-tree__result bubble fern flower green-border blue-back"></div>
+      <div class="results-tree__result bubble toad feather sienna-border tan-back"></div>
+      <div class="results-tree__result bubble foot scorpion gold-border red-back"></div>
+      <div class="results-tree__result bubble flower feather blue-border dimgray-back"></div>
     </div>                             
                                        
     <div class="results-tree__row">    
-      <div class="results-tree__result bubble purple-border sienna-back"></div>
-      <div class="results-tree__result bubble green-border gold-back"></div>
-      <div class="results-tree__result bubble sienna-border blue-back"></div>
-      <div class="results-tree__result bubble gold-border tan-back"></div>
-      <div class="results-tree__result bubble blue-border red-back"></div>
-      <div class="results-tree__result bubble tan-border dimgray-back"></div>
+      <div class="results-tree__result bubble mushroom toad purple-border sienna-back"></div>
+      <div class="results-tree__result bubble fern foot green-border gold-back"></div>
+      <div class="results-tree__result bubble toad flower sienna-border blue-back"></div>
+      <div class="results-tree__result bubble foot root gold-border tan-back"></div>
+      <div class="results-tree__result bubble flower scorpion blue-border red-back"></div>
+      <div class="results-tree__result bubble root feather tan-border dimgray-back"></div>
     </div>                             
                                        
     <div class="results-tree__row">    
-      <div class="results-tree__result bubble purple-border green-back"></div>
-      <div class="results-tree__result bubble green-border sienna-back"></div>
-      <div class="results-tree__result bubble sienna-border gold-back"></div>
-      <div class="results-tree__result bubble gold-border blue-back"></div>
-      <div class="results-tree__result bubble blue-border tan-back"></div>
-      <div class="results-tree__result bubble tan-border red-back"></div>
-      <div class="results-tree__result bubble red-border dimgray-back"></div>
+      <div class="results-tree__result bubble mushroom fern purple-border green-back"></div>
+      <div class="results-tree__result bubble fern toad green-border sienna-back"></div>
+      <div class="results-tree__result bubble toad feather sienna-border gold-back"></div>
+      <div class="results-tree__result bubble foot flower gold-border blue-back"></div>
+      <div class="results-tree__result bubble flower root blue-border tan-back"></div>
+      <div class="results-tree__result bubble root scorpion tan-border red-back"></div>
+      <div class="results-tree__result bubble scorpion feather red-border dimgray-back"></div>
     </div>
     
     <div class="results-tree__row">
-      <div class="results-tree__element bubble mushroom purple-border purple-back">M</div>
-      <div class="results-tree__element bubble fern green-border green-back">G</div>
-      <div class="results-tree__element bubble toad sienna-border sienna-back">T</div>
-      <div class="results-tree__element bubble foot gold-border gold-back">C</div>
-      <div class="results-tree__element bubble flower blue-border blue-back">F</div>
-      <div class="results-tree__element bubble root tan-border tan-back">R</div>
-      <div class="results-tree__element bubble scorpion red-border red-back">S</div>
-      <div class="results-tree__element bubble feather dimgray-border dimgray-back">B</div>
+      <div class="results-tree__element bubble key mushroom purple-border purple-back">M</div>
+      <div class="results-tree__element bubble key fern green-border green-back">G</div>
+      <div class="results-tree__element bubble key toad sienna-border sienna-back">T</div>
+      <div class="results-tree__element bubble key foot gold-border gold-back">C</div>
+      <div class="results-tree__element bubble key flower blue-border blue-back">F</div>
+      <div class="results-tree__element bubble key root tan-border tan-back">R</div>
+      <div class="results-tree__element bubble key scorpion red-border red-back">S</div>
+      <div class="results-tree__element bubble key feather dimgray-border dimgray-back">B</div>
     </div>
     
   </div>
@@ -274,4 +281,5 @@
     </div>
   </div>
 </body>
-<script type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="logic.js"></script>
