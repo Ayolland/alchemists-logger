@@ -1,0 +1,104 @@
+/*
+Error: $color: "violet" is not a color for `darken'
+        on line 9 of main.scss, in `results'
+        from line 110 of main.scss
+
+4:       border-left: 3px solid $color;
+5:       border-top: 3px solid $color;
+6:     }
+7:     
+8:     .#{$color}-back{
+9:       background: darken($color, 15%);
+10:       border-right: 3px solid $color;
+11:       border-bottom: 3px solid $color;
+12:     }
+13:     
+14:     .#{$color}-soft{
+
+Backtrace:
+main.scss:9:in `results'
+main.scss:110
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/script/tree/funcall.rb:303:in `reformat_argument_error'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/script/tree/funcall.rb:146:in `rescue in _perform'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/script/tree/funcall.rb:123:in `_perform'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/script/tree/node.rb:50:in `perform'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:394:in `visit_prop'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `block in with_base'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:430:in `map'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `block in with_base'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:240:in `block (3 levels) in visit_each'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:240:in `map'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:240:in `block (2 levels) in visit_each'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:232:in `map'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:232:in `block in visit_each'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:231:in `visit_each'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `block in with_base'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:363:in `block (4 levels) in visit_mixin'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:363:in `map'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:363:in `block (3 levels) in visit_mixin'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:363:in `block (2 levels) in visit_mixin'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:84:in `perform_arguments'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:358:in `block in visit_mixin'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:98:in `block in with_mixin'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:98:in `with_mixin'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:346:in `visit_mixin'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `block in with_base'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:282:in `call'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:282:in `_process_changes'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:246:in `block in _wait_for_changes'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:229:in `loop'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:229:in `_wait_for_changes'
+/Users/andrewyolland/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:318:in `block in _start_wait_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: $color: \"violet\" is not a color for `darken'\A         on line 9 of main.scss, in `results'\A         from line 110 of main.scss\A \A 4:       border-left: 3px solid $color;\A 5:       border-top: 3px solid $color;\A 6:     }\A 7:     \A 8:     .#{$color}-back{\A 9:       background: darken($color, 15%);\A 10:       border-right: 3px solid $color;\A 11:       border-bottom: 3px solid $color;\A 12:     }\A 13:     \A 14:     .#{$color}-soft{"; }

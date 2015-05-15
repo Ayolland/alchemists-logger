@@ -1,0 +1,110 @@
+@mixin results($colors...){
+  @each $color in $colors{
+    .#{$color}-border{
+      border-left: 3px solid $color;
+      border-top: 3px solid $color;
+    }
+    
+    .#{$color}-back{
+      background: darken($color, 15%);
+      border-right: 3px solid $color;
+      border-bottom: 3px solid $color;
+    }
+    
+    .#{$color}-soft{
+      background: mix($color, whitesmoke);
+      border: 1px solid mix($color, dimgray);
+    }
+    
+    .#{$color}-soft.true{
+      background: lighten($color, 40%);
+    }
+    
+    .#{$color}-soft.false{
+      background: mix($color, black);
+      border: 1px solid black;
+    }
+  }
+}
+
+$paper: #DDC;
+$margin: 5px;
+$iphone5: 320px;
+
+.bubble{
+  border-radius: 50%;
+  display: inline-block;
+}
+
+body{
+  background: $paper;
+  margin: 0;
+}
+
+.controls{
+  background: darken($paper, 15%);
+  width: $iphone5;
+  margin: $margin auto;
+  padding: $margin;
+  .control-group{
+    text-align: center;
+    width: 100%;
+    .control-group__title{
+      margin: $margin auto;
+      font-size: 15px;
+      text-transform: uppercase;
+      
+    }
+    .control-group__select{
+      width: 18%;
+      display: inline-block;
+      background: darken($paper, 30%);
+    }
+    .control-group__operator{
+      font: normal normal normal 11px/normal '.HelveticaNeueDeskInterface-Regular';
+      text-align: center;
+      width: 3%;
+      display: inline-block;
+    }
+  }
+}
+
+.results-tree{
+  $bubble-size: 28px;
+  width: $iphone5;
+  margin: 0 auto;
+  .results-tree__row{
+    width: 100%;
+    text-align: center;
+    div{
+      width: $bubble-size;
+      height: $bubble-size;
+    }
+    .results-tree__element{
+      vertical-align: top;
+      color: white;
+    }
+  }
+}
+
+.answer-grid{
+  display: table;
+  width: $iphone5;
+  margin: 0 auto;
+  .answer-grid__row{
+    width: 100%;
+    display: table-row;
+    .answer-grid__answer{
+      box-sizing: border-box;
+      display: table-cell;
+      width: 12.5%;
+      height: 30px;
+    }
+    .answer-grid__answer.guess{
+      border: 4px solid #F0E;
+    }
+  }
+}
+
+
+@include results( "violet", "green", "sienna", "gold", "blue", "tan", "red", "dimgray")
