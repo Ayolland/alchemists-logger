@@ -84,18 +84,27 @@ body{
       overflow: hidden;
       font-size: $bubble-font-size;
       line-height: 1;
+      &.potion-redgreen,&.potion-greenred{
+        background: linear-gradient(red,green);
+      };
+      &.potion-greenblue,&.potion-bluegreen{
+        background: linear-gradient(green,blue);
+      };
+      &.potion-bluered,&.potion-redblue{
+        background: linear-gradient(blue,red);
+      };
       &.potion-green{
         background: green;
-      }
+      };
       &.potion-red{
         background: red;
-      }
+      };
       &.potion-blue{
         background: blue;
-      }
+      };
       &.potion-neutral{
         background: gray;
-      }
+      };
     }
     .results-tree__element{
       vertical-align: top;
@@ -108,7 +117,7 @@ body{
 .answer-grid{
   display: table;
   width: $iphone5;
-  margin: 0 auto;
+  margin: 5px auto;
   .answer-grid__row{
     width: 100%;
     display: table-row;
@@ -120,6 +129,10 @@ body{
     }
     .answer-grid__answer.guess{
       border: 4px solid #F0E;
+    }
+    .answer-grid__answer > img {
+      margin: 3px;
+      vertical-align: middle;
     }
   }
 }
