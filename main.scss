@@ -1,28 +1,31 @@
-@mixin results($colors...){
-  @each $color in $colors{
-    .#{$color}-border{
+@mixin results($color-map){
+  @each $ingredient, $color in $color-map{
+    .#{$ingredient}-left{
       border-left: 3px solid $color;
       border-top: 3px solid $color;
     }
     
-    .#{$color}-back{
-      background: darken($color, 15%);
+    .#{$ingredient}-right{
       border-right: 3px solid $color;
       border-bottom: 3px solid $color;
+      background: mix($color, lightgray);
     }
     
-    .#{$color}-soft{
+    .#{$ingredient}-back{
+      background: darken($color, 15%);
+    }
+    
+    .answer-grid__answer.#{$ingredient}{
       background: mix($color, whitesmoke);
       border: 1px solid mix($color, dimgray);
-    }
-    
-    .#{$color}-soft.true{
-      background: lighten($color, 40%);
-    }
-    
-    .#{$color}-soft.false{
-      background: mix($color, black);
-      border: 1px solid black;
+        &.true{
+            background: lighten($color, 40%);
+
+        }
+        &.false{
+              background: mix($color, black);
+              border: 1px solid black;
+        }
     }
   }
 }
@@ -31,6 +34,16 @@ $paper: #DDC;
 $margin: 5px;
 $iphone5: 320px;
 $bubble-font-size: 24px;
+$ingredient-colors:(
+  mushroom: purple,
+  fern: green,
+  toad: sienna,
+  foot: gold,
+  flower: blue,
+  root: tan,
+  scorpion: red,
+  feather: dimgray
+);
 
 .bubble{
   border-radius: 50%;
@@ -138,4 +151,4 @@ body{
 }
 
  
-@include results( purple, green, sienna, gold, blue, tan, red, dimgray)
+@include results($ingredient-colors)
