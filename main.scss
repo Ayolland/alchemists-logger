@@ -1,5 +1,11 @@
 @mixin results($color-map){
   @each $ingredient, $color in $color-map{
+    .results-tree__element.#{$ingredient}{
+      div.icon{
+        background: url("ingredients/#{$ingredient}.png");
+        background-size: cover;
+      }
+    }
     .#{$ingredient}-left{
       border-left: 3px solid $color;
       border-top: 3px solid $color;
@@ -36,12 +42,12 @@ $iphone5: 320px;
 $bubble-font-size: 24px;
 $ingredient-colors:(
   mushroom: purple,
-  fern: green,
+  fern: forestgreen,
   toad: sienna,
   foot: gold,
-  flower: blue,
+  flower: darkblue,
   root: tan,
-  scorpion: red,
+  scorpion: darkred,
   feather: dimgray
 );
 
@@ -106,13 +112,13 @@ body{
       &.potion-bluered,&.potion-redblue{
         background: linear-gradient(blue,red);
       };
-      &.potion-green{
+      &.potion-greenplus,&.potion-green-minus{
         background: green;
       };
-      &.potion-red{
+      &.potion-redplus,&.potion-red-minus{
         background: red;
       };
-      &.potion-blue{
+      &.potion-blueplus,&.potion-blue-minus{
         background: blue;
       };
       &.potion-neutral{
@@ -140,8 +146,8 @@ body{
       width: 12.5%;
       height: 30px;
     }
-    .answer-grid__answer.guess{
-      border: 4px solid #F0E;
+    .answer-grid__answer img.guess{
+      border: 4px solid #FFF;
     }
     .answer-grid__answer > img {
       margin: 3px;

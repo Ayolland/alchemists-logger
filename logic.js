@@ -24,13 +24,22 @@ function selectorValue(selectTag){
 
 function markResult(ingredient1,ingredient2,result){
   var targetBubble = $("." + ingredient1).filter("." + ingredient2);
-  var potionColor = result.slice(0,-1)
-  var polarity = result.slice(-1)
-  if (polarity == "X") {
+  var polarity = result.slice(-4)
+  if (polarity == "tral") {
     polarity = "&#x20E0;"
-  } else if (polarity == "-"){
+  } else if (polarity == "inus"){
     polarity = "&#8211";
+  } else if (polarity == "plus"){
+    polarity = "+";
   };
-  targetBubble.addClass("potion-" + potionColor);
+  targetBubble.addClass("potion-" + result);
   targetBubble[0].innerHTML = polarity;
 };
+
+function notPol(ingredient,colorPolarity){
+  var opposites = {"redplus":"redminus", "greenplus":"greenminus","blueplus":"blueminus"};
+  var $boxes = $("." + ingredient).filter("." + opposites[colorPolarity]);
+  $boxes.each(function(i){
+    if (!($(this).hasClass("false"))) {$(this).addClass("false")}
+  })
+}

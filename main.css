@@ -47,11 +47,11 @@ body {
         background: linear-gradient(green, blue); }
       .results-tree .results-tree__row div.potion-bluered, .results-tree .results-tree__row div.potion-redblue {
         background: linear-gradient(blue, red); }
-      .results-tree .results-tree__row div.potion-green {
+      .results-tree .results-tree__row div.potion-greenplus, .results-tree .results-tree__row div.potion-green-minus {
         background: green; }
-      .results-tree .results-tree__row div.potion-red {
+      .results-tree .results-tree__row div.potion-redplus, .results-tree .results-tree__row div.potion-red-minus {
         background: red; }
-      .results-tree .results-tree__row div.potion-blue {
+      .results-tree .results-tree__row div.potion-blueplus, .results-tree .results-tree__row div.potion-blue-minus {
         background: blue; }
       .results-tree .results-tree__row div.potion-neutral {
         background: gray; }
@@ -71,11 +71,15 @@ body {
       display: table-cell;
       width: 12.5%;
       height: 30px; }
-    .answer-grid .answer-grid__row .answer-grid__answer.guess {
-      border: 4px solid #F0E; }
+    .answer-grid .answer-grid__row .answer-grid__answer img.guess {
+      border: 4px solid #FFF; }
     .answer-grid .answer-grid__row .answer-grid__answer > img {
       margin: 3px;
       vertical-align: middle; }
+
+.results-tree__element.mushroom div.icon {
+  background: url("ingredients/mushroom.png");
+  background-size: cover; }
 
 .mushroom-left {
   border-left: 3px solid purple;
@@ -98,26 +102,34 @@ body {
     background: #400040;
     border: 1px solid black; }
 
+.results-tree__element.fern div.icon {
+  background: url("ingredients/fern.png");
+  background-size: cover; }
+
 .fern-left {
-  border-left: 3px solid green;
-  border-top: 3px solid green; }
+  border-left: 3px solid forestgreen;
+  border-top: 3px solid forestgreen; }
 
 .fern-right {
-  border-right: 3px solid green;
-  border-bottom: 3px solid green;
-  background: #69a969; }
+  border-right: 3px solid forestgreen;
+  border-bottom: 3px solid forestgreen;
+  background: #7aaf7a; }
 
 .fern-back {
-  background: #003400; }
+  background: #134e13; }
 
 .answer-grid__answer.fern {
-  background: #7aba7a;
-  border: 1px solid #347434; }
+  background: #8bc08b;
+  border: 1px solid #457a45; }
   .answer-grid__answer.fern.true {
-    background: #4dff4d; }
+    background: #94e594; }
   .answer-grid__answer.fern.false {
-    background: #004000;
+    background: #114511;
     border: 1px solid black; }
+
+.results-tree__element.toad div.icon {
+  background: url("ingredients/toad.png");
+  background-size: cover; }
 
 .toad-left {
   border-left: 3px solid sienna;
@@ -140,6 +152,10 @@ body {
     background: #502916;
     border: 1px solid black; }
 
+.results-tree__element.foot div.icon {
+  background: url("ingredients/foot.png");
+  background-size: cover; }
+
 .foot-left {
   border-left: 3px solid gold;
   border-top: 3px solid gold; }
@@ -161,26 +177,34 @@ body {
     background: #7f6b00;
     border: 1px solid black; }
 
+.results-tree__element.flower div.icon {
+  background: url("ingredients/flower.png");
+  background-size: cover; }
+
 .flower-left {
-  border-left: 3px solid blue;
-  border-top: 3px solid blue; }
+  border-left: 3px solid darkblue;
+  border-top: 3px solid darkblue; }
 
 .flower-right {
-  border-right: 3px solid blue;
-  border-bottom: 3px solid blue;
-  background: #6969e9; }
+  border-right: 3px solid darkblue;
+  border-bottom: 3px solid darkblue;
+  background: #6969af; }
 
 .flower-back {
-  background: #0000b3; }
+  background: #00003f; }
 
 .answer-grid__answer.flower {
-  background: #7a7afa;
-  border: 1px solid #3434b4; }
+  background: #7a7ac0;
+  border: 1px solid #34347a; }
   .answer-grid__answer.flower.true {
-    background: #ccccff; }
+    background: #5858ff; }
   .answer-grid__answer.flower.false {
-    background: #00007f;
+    background: #000045;
     border: 1px solid black; }
+
+.results-tree__element.root div.icon {
+  background: url("ingredients/root.png");
+  background-size: cover; }
 
 .root-left {
   border-left: 3px solid tan;
@@ -203,26 +227,34 @@ body {
     background: #695a46;
     border: 1px solid black; }
 
+.results-tree__element.scorpion div.icon {
+  background: url("ingredients/scorpion.png");
+  background-size: cover; }
+
 .scorpion-left {
-  border-left: 3px solid red;
-  border-top: 3px solid red; }
+  border-left: 3px solid darkred;
+  border-top: 3px solid darkred; }
 
 .scorpion-right {
-  border-right: 3px solid red;
-  border-bottom: 3px solid red;
-  background: #e96969; }
+  border-right: 3px solid darkred;
+  border-bottom: 3px solid darkred;
+  background: #af6969; }
 
 .scorpion-back {
-  background: #b30000; }
+  background: #3f0000; }
 
 .answer-grid__answer.scorpion {
-  background: #fa7a7a;
-  border: 1px solid #b43434; }
+  background: #c07a7a;
+  border: 1px solid #7a3434; }
   .answer-grid__answer.scorpion.true {
-    background: #ffcccc; }
+    background: #ff5858; }
   .answer-grid__answer.scorpion.false {
-    background: #7f0000;
+    background: #450000;
     border: 1px solid black; }
+
+.results-tree__element.feather div.icon {
+  background: url("ingredients/feather.png");
+  background-size: cover; }
 
 .feather-left {
   border-left: 3px solid dimgray;
