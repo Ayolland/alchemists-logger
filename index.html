@@ -38,15 +38,15 @@
       </div>
       <select class="control-group__select" id="test_potion__result">
         <option selected disabled>Result</option>
-        <option value="blue+">Blue +</option>
-        <option value="blue-">Blue -</option>
-        <option value="red+">Red +</option>
-        <option value="red-">Red -</option>
-        <option value="green+">Green +</option>
-        <option value="green-">Green -</option>
-        <option value="neutralX">Neutral</option>
+        <option value="blueplus">Blue +</option>
+        <option value="blueminus">Blue -</option>
+        <option value="redplus">Red +</option>
+        <option value="redminus">Red -</option>
+        <option value="greenplus">Green +</option>
+        <option value="greenminus">Green -</option>
+        <option value="neutral">Neutral</option>
       </select>
-      <input type="submit" value="Go" class="control-group__submit" id="testPotion__submit">
+      <input type="submit" value="Go" class="control-group__submit" id="test_potion__submit">
     </form>
     <form class="control-group" id="sell_potion">
       <h3 class="control-group__title">sell</h3>
@@ -80,25 +80,24 @@
       </div>
       <select class="control-group__select" id="sell_potion__target">
         <option selected disabled>Target</option>
-        <option value="blue+">Blue +</option>
-        <option value="blue-">Blue -</option>
-        <option value="red+">Red +</option>
-        <option value="red-">Red -</option>
-        <option value="green-">Green +</option>
-        <option value="green+">Green -</option>
-        <option value="neutralX">Neutral</option>
+        <option value="blueplus">Blue +</option>
+        <option value="blueminus">Blue -</option>
+        <option value="redplus">Red +</option>
+        <option value="redminus">Red -</option>
+        <option value="greenminus">Green +</option>
+        <option value="greenplus">Green -</option>
       </select>
       <div class="control-group__operator">
         )=
       </div>
       <select class="control-group__select" id="sell_potion__result">
         <option selected disabled>Result</option>
-        <option value="good">Exact Match</option>
-        <option value="okay">Correct +/-</option>
-        <option value="neutral">No +/-</option>
-        <option value="bad">Wrong +/-</option>
+        <option value="0">Exact Match</option>
+        <option value="1">Correct +/-</option>
+        <option value="2">Neutral</option>
+        <option value="3">Wrong +/-</option>
       </select>
-      <input type="submit" value="Go" class="control-group__submit">
+      <input type="submit" value="Go" class="control-group__submit" id="sell_potion__submit">
     </form>
     <form class="control-group">
       <h3 class="control-group__title" id="debunk_proof">Debunk / Periscope</h3>
@@ -124,15 +123,15 @@
       </div>
       <select class="control-group__select" id="debunk_proof__result">
         <option selected disabled>Result</option>
-        <option value="blue+">Blue +</option>
-        <option value="blue-">Blue -</option>
-        <option value="red+">Red +</option>
-        <option value="red-">Red -</option>
-        <option value="green-">Green +</option>
-        <option value="green+">Green -</option>
-        <option value="neutralX">Neutral</option>
+        <option value="blueplus">Blue +</option>
+        <option value="blueminus">Blue -</option>
+        <option value="redplus">Red +</option>
+        <option value="redminus">Red -</option>
+        <option value="greenminus">Green +</option>
+        <option value="greenplus">Green -</option>
+        <option value="neutral">Neutral</option>
       </select>
-      <input type="submit" value="Go" class="control-group__submit">
+      <input type="submit" value="Go" class="control-group__submit" id="debunk_proof__submit">
     </form>
   </div>
   <div id="tree" class="results-tree">
@@ -216,54 +215,54 @@
   </div>
   <div id="grid" class="answer-grid">
     <div class="answer-grid__row">
-      <div class="answer-grid__answer type1 mushroom redminus greenplus blueminus bluebig false">
+      <div class="answer-grid__answer type1 mushroom redminus greenplus blueminus bluebig">
         <img src="elements/rs-gs+BL-.svg">
       </div>
-      <div class="answer-grid__answer type1 fern redminus greenplus blueminus bluebig false">
+      <div class="answer-grid__answer type1 fern redminus greenplus blueminus bluebig">
         <img src="elements/rs-gs+BL-.svg">
       </div>
-      <div class="answer-grid__answer type1 toad redminus greenplus blueminus bluebig false">
+      <div class="answer-grid__answer type1 toad redminus greenplus blueminus bluebig">
         <img src="elements/rs-gs+BL-.svg">
       </div>
-      <div class="answer-grid__answer type1 foot redminus greenplus blueminus bluebig false">
+      <div class="answer-grid__answer type1 foot redminus greenplus blueminus bluebig">
         <img src="elements/rs-gs+BL-.svg">
       </div>
-      <div class="answer-grid__answer type1 flower redminus greenplus blueminus bluebig false">
+      <div class="answer-grid__answer type1 flower redminus greenplus blueminus bluebig">
         <img src="elements/rs-gs+BL-.svg">
       </div>
-      <div class="answer-grid__answer type1 root redminus greenplus blueminus bluebig false">
+      <div class="answer-grid__answer type1 root redminus greenplus blueminus bluebig">
         <img src="elements/rs-gs+BL-.svg">
       </div>
-      <div class="answer-grid__answer type1 scorpion redminus greenplus blueminus bluebig false">
+      <div class="answer-grid__answer type1 scorpion redminus greenplus blueminus bluebig">
         <img src="elements/rs-gs+BL-.svg">
       </div>
-      <div class="answer-grid__answer type1 feather redminus greenplus blueminus bluebig false">
-        <img src="elements/rs-gs+BL-.svg" class="guess">
+      <div class="answer-grid__answer type1 feather redminus greenplus blueminus bluebig">
+        <img src="elements/rs-gs+BL-.svg">
       </div>
     </div>
     <div class="answer-grid__row">
-      <div class="answer-grid__answer type2 mushroom redplus greenminus blueplus bluebig true">
+      <div class="answer-grid__answer type2 mushroom redplus greenminus blueplus bluebig">
         <img src="elements/rs+gs-BL+.svg">
       </div>
-      <div class="answer-grid__answer type2 fern redplus greenminus blueplus bluebig true">
+      <div class="answer-grid__answer type2 fern redplus greenminus blueplus bluebig">
         <img src="elements/rs+gs-BL+.svg">
       </div>
-      <div class="answer-grid__answer type2 toad redplus greenminus blueplus bluebig true">
+      <div class="answer-grid__answer type2 toad redplus greenminus blueplus bluebig">
         <img src="elements/rs+gs-BL+.svg">
       </div>
-      <div class="answer-grid__answer type2 foot redplus greenminus blueplus bluebig true">
+      <div class="answer-grid__answer type2 foot redplus greenminus blueplus bluebig">
         <img src="elements/rs+gs-BL+.svg">
       </div>
-      <div class="answer-grid__answer type2 flower redplus greenminus blueplus bluebig true">
-        <img src="elements/rs+gs-BL+.svg" class="guess">
-      </div>
-      <div class="answer-grid__answer type2 root redplus greenminus blueplus bluebig true">
+      <div class="answer-grid__answer type2 flower redplus greenminus blueplus bluebig">
         <img src="elements/rs+gs-BL+.svg">
       </div>
-      <div class="answer-grid__answer type2 scorpion redplus greenminus blueplus bluebig true">
+      <div class="answer-grid__answer type2 root redplus greenminus blueplus bluebig">
         <img src="elements/rs+gs-BL+.svg">
       </div>
-      <div class="answer-grid__answer type2 feather redplus greenminus blueplus bluebig true">
+      <div class="answer-grid__answer type2 scorpion redplus greenminus blueplus bluebig">
+        <img src="elements/rs+gs-BL+.svg">
+      </div>
+      <div class="answer-grid__answer type2 feather redplus greenminus blueplus bluebig">
         <img src="elements/rs+gs-BL+.svg">
       </div>
     </div>

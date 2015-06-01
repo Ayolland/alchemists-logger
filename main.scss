@@ -22,7 +22,7 @@
     }
     
     .answer-grid__answer.#{$ingredient}{
-      background: mix($color, whitesmoke);
+      background: mix($color, lightgray);
       border: 1px solid mix($color, dimgray);
         &.true{
             background: lighten($color, 40%);
@@ -103,22 +103,25 @@ body{
       overflow: hidden;
       font-size: $bubble-font-size;
       line-height: 1;
-      &.potion-redgreen,&.potion-greenred{
+      &.potion-blankplus,&.potion-blankminus{
+        background: gray;
+      };
+      &.potion-redgreenminus,&.potion-redgreenplus{
         background: linear-gradient(red,green);
       };
-      &.potion-greenblue,&.potion-bluegreen{
+      &.potion-greenblueminus,&.potion-greenblueplus{
         background: linear-gradient(green,blue);
       };
-      &.potion-bluered,&.potion-redblue{
+      &.potion-blueredminus,&.potion-blueredplus{
         background: linear-gradient(blue,red);
       };
-      &.potion-greenplus,&.potion-green-minus{
+      &.potion-greenplus,&.potion-greenminus{
         background: green;
       };
-      &.potion-redplus,&.potion-red-minus{
+      &.potion-redplus,&.potion-redminus{
         background: red;
       };
-      &.potion-blueplus,&.potion-blue-minus{
+      &.potion-blueplus,&.potion-blueminus{
         background: blue;
       };
       &.potion-neutral{
@@ -146,8 +149,8 @@ body{
       width: 12.5%;
       height: 30px;
     }
-    .answer-grid__answer img.guess{
-      border: 4px solid #FFF;
+    .answer-grid__answer.guess{
+      border: 5px double #FFF;
     }
     .answer-grid__answer > img {
       margin: 3px;

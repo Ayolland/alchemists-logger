@@ -41,17 +41,19 @@ body {
       overflow: hidden;
       font-size: 24px;
       line-height: 1; }
-      .results-tree .results-tree__row div.potion-redgreen, .results-tree .results-tree__row div.potion-greenred {
+      .results-tree .results-tree__row div.potion-blankplus, .results-tree .results-tree__row div.potion-blankminus {
+        background: gray; }
+      .results-tree .results-tree__row div.potion-redgreenminus, .results-tree .results-tree__row div.potion-redgreenplus {
         background: linear-gradient(red, green); }
-      .results-tree .results-tree__row div.potion-greenblue, .results-tree .results-tree__row div.potion-bluegreen {
+      .results-tree .results-tree__row div.potion-greenblueminus, .results-tree .results-tree__row div.potion-greenblueplus {
         background: linear-gradient(green, blue); }
-      .results-tree .results-tree__row div.potion-bluered, .results-tree .results-tree__row div.potion-redblue {
+      .results-tree .results-tree__row div.potion-blueredminus, .results-tree .results-tree__row div.potion-blueredplus {
         background: linear-gradient(blue, red); }
-      .results-tree .results-tree__row div.potion-greenplus, .results-tree .results-tree__row div.potion-green-minus {
+      .results-tree .results-tree__row div.potion-greenplus, .results-tree .results-tree__row div.potion-greenminus {
         background: green; }
-      .results-tree .results-tree__row div.potion-redplus, .results-tree .results-tree__row div.potion-red-minus {
+      .results-tree .results-tree__row div.potion-redplus, .results-tree .results-tree__row div.potion-redminus {
         background: red; }
-      .results-tree .results-tree__row div.potion-blueplus, .results-tree .results-tree__row div.potion-blue-minus {
+      .results-tree .results-tree__row div.potion-blueplus, .results-tree .results-tree__row div.potion-blueminus {
         background: blue; }
       .results-tree .results-tree__row div.potion-neutral {
         background: gray; }
@@ -71,8 +73,8 @@ body {
       display: table-cell;
       width: 12.5%;
       height: 30px; }
-    .answer-grid .answer-grid__row .answer-grid__answer img.guess {
-      border: 4px solid #FFF; }
+    .answer-grid .answer-grid__row .answer-grid__answer.guess {
+      border: 5px double #FFF; }
     .answer-grid .answer-grid__row .answer-grid__answer > img {
       margin: 3px;
       vertical-align: middle; }
@@ -94,7 +96,7 @@ body {
   background: #340033; }
 
 .answer-grid__answer.mushroom {
-  background: #ba7aba;
+  background: #a969a9;
   border: 1px solid #743474; }
   .answer-grid__answer.mushroom.true {
     background: #ff4dff; }
@@ -119,7 +121,7 @@ body {
   background: #134e13; }
 
 .answer-grid__answer.fern {
-  background: #8bc08b;
+  background: #7aaf7a;
   border: 1px solid #457a45; }
   .answer-grid__answer.fern.true {
     background: #94e594; }
@@ -144,7 +146,7 @@ body {
   background: #64331c; }
 
 .answer-grid__answer.toad {
-  background: #caa391;
+  background: #b99280;
   border: 1px solid #845d4b; }
   .answer-grid__answer.toad.true {
     background: #e9c2b0; }
@@ -169,7 +171,7 @@ body {
   background: #b39700; }
 
 .answer-grid__answer.foot {
-  background: #fae67a;
+  background: #e9d569;
   border: 1px solid #b4a034; }
   .answer-grid__answer.foot.true {
     background: #fff7cc; }
@@ -194,7 +196,7 @@ body {
   background: #00003f; }
 
 .answer-grid__answer.flower {
-  background: #7a7ac0;
+  background: #6969af;
   border: 1px solid #34347a; }
   .answer-grid__answer.flower.true {
     background: #5858ff; }
@@ -219,7 +221,7 @@ body {
   background: #bc9055; }
 
 .answer-grid__answer.root {
-  background: #e3d4c0;
+  background: #d2c3af;
   border: 1px solid #9d8e7a; }
   .answer-grid__answer.root.true {
     background: white; }
@@ -244,7 +246,7 @@ body {
   background: #3f0000; }
 
 .answer-grid__answer.scorpion {
-  background: #c07a7a;
+  background: #af6969;
   border: 1px solid #7a3434; }
   .answer-grid__answer.scorpion.true {
     background: #ff5858; }
@@ -269,7 +271,7 @@ body {
   background: #434343; }
 
 .answer-grid__answer.feather {
-  background: #afafaf;
+  background: #9e9e9e;
   border: 1px solid dimgray; }
   .answer-grid__answer.feather.true {
     background: #cfcfcf; }
