@@ -65,14 +65,15 @@ function markResult(ingredient1,ingredient2,result){
   var targetBubble = $("." + ingredient1).filter("." + ingredient2);
   var polarity = result.slice(-4)
   if (polarity == "tral") {
-    polarity = "&#x20E0;"
+    polarity = "neutral"
   } else if (polarity == "inus"){
-    polarity = "&#8211";
+    polarity = "minus";
   } else if (polarity == "plus"){
-    polarity = "+";
+    polarity = "plus";
   };
+  var imgTag = "<img src='polarities/" + polarity + ".png'>"
   targetBubble.addClass("potion-" + result);
-  targetBubble[0].innerHTML = polarity;
+  targetBubble[0].innerHTML = imgTag;
   hasComponent(ingredient1,result);
   hasComponent(ingredient2,result);
 };

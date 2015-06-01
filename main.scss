@@ -127,6 +127,9 @@ body{
       &.potion-neutral{
         background: gray;
       };
+      img{
+        width: 100%;
+      }
     }
     .results-tree__element{
       vertical-align: top;

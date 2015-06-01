@@ -57,6 +57,8 @@ body {
         background: blue; }
       .results-tree .results-tree__row div.potion-neutral {
         background: gray; }
+      .results-tree .results-tree__row div img {
+        width: 100%; }
     .results-tree .results-tree__row .results-tree__element {
       vertical-align: top;
       color: white; }
