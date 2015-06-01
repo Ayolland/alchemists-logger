@@ -103,6 +103,7 @@ body{
       overflow: hidden;
       font-size: $bubble-font-size;
       line-height: 1;
+      vertical-align: top;
       &.potion-blankplus,&.potion-blankminus{
         background: gray;
       };
