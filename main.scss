@@ -50,6 +50,7 @@ $ingredient-colors:(
   scorpion: darkred,
   feather: dimgray
 );
+$non-mobile-break: 700px;
 
 .bubble{
   border-radius: 50%;
@@ -59,6 +60,11 @@ $ingredient-colors:(
 body{
   background: $paper;
   margin: 0;
+  @media screen and (min-width: $non-mobile-break) {
+    width: 700px;
+    position: relative;
+    margin: 0 auto;
+  }
 }
 
 .controls{
@@ -66,6 +72,12 @@ body{
   width: $iphone5;
   margin: $margin auto;
   padding: $margin;
+  @media screen and (min-width: $non-mobile-break) {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    width: auto;
+  }
   .control-group{
     text-align: center;
     width: 100%;
@@ -76,14 +88,17 @@ body{
       
     }
     .control-group__select{
-      width: 18%;
+      width: 15%;
       display: inline-block;
       background: darken($paper, 30%);
+      @media screen and (min-width: $non-mobile-break) {
+        width: auto;
+      }
     }
     .control-group__operator{
       font: normal normal normal 11px/normal '.HelveticaNeueDeskInterface-Regular';
       text-align: center;
-      width: 3%;
+      width: 2.5%;
       display: inline-block;
     }
   }
@@ -93,6 +108,9 @@ body{
   $bubble-size: 28px;
   width: $iphone5;
   margin: 0 auto;
+  @media screen and (min-width: $non-mobile-break) {
+    margin: 5px 0;
+  }
   .results-tree__row{
     width: 100%;
     text-align: center;
@@ -144,6 +162,9 @@ body{
   display: table;
   width: $iphone5;
   margin: 5px auto;
+  @media screen and (min-width: $non-mobile-break) {
+    margin: 5px 0;
+  }
   .answer-grid__row{
     width: 100%;
     display: table-row;

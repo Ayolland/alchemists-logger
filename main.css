@@ -5,12 +5,23 @@
 body {
   background: #DDC;
   margin: 0; }
+  @media screen and (min-width: 700px) {
+    body {
+      width: 700px;
+      position: relative;
+      margin: 0 auto; } }
 
 .controls {
   background: #bebe9e;
   width: 320px;
   margin: 5px auto;
   padding: 5px; }
+  @media screen and (min-width: 700px) {
+    .controls {
+      position: absolute;
+      left: 50%;
+      top: 20%;
+      width: auto; } }
   .controls .control-group {
     text-align: center;
     width: 100%; }
@@ -19,18 +30,24 @@ body {
       font-size: 15px;
       text-transform: uppercase; }
     .controls .control-group .control-group__select {
-      width: 18%;
+      width: 15%;
       display: inline-block;
       background: #a0a070; }
+      @media screen and (min-width: 700px) {
+        .controls .control-group .control-group__select {
+          width: auto; } }
     .controls .control-group .control-group__operator {
       font: normal normal normal 11px/normal '.HelveticaNeueDeskInterface-Regular';
       text-align: center;
-      width: 3%;
+      width: 2.5%;
       display: inline-block; }
 
 .results-tree {
   width: 320px;
   margin: 0 auto; }
+  @media screen and (min-width: 700px) {
+    .results-tree {
+      margin: 5px 0; } }
   .results-tree .results-tree__row {
     width: 100%;
     text-align: center; }
@@ -68,6 +85,9 @@ body {
   display: table;
   width: 320px;
   margin: 5px auto; }
+  @media screen and (min-width: 700px) {
+    .answer-grid {
+      margin: 5px 0; } }
   .answer-grid .answer-grid__row {
     width: 100%;
     display: table-row; }
