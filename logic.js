@@ -23,6 +23,7 @@ $("#debunk_proof__submit").click(function(event){
 function testPotion(){
   var ingredient1 = selectorValue($("#test_potion__ingredient1")[0]);
   var ingredient2 = selectorValue($("#test_potion__ingredient2")[0]);
+  if (ingredient1 == ingredient2){ return };
   var result = selectorValue($("#test_potion__result")[0]);
   console.log(ingredient1,ingredient2,result);
   markResult(ingredient1,ingredient2,result);
@@ -31,6 +32,7 @@ function testPotion(){
 function sellPotion(){
   var ingredient1 = selectorValue($("#sell_potion__ingredient1")[0]);
   var ingredient2 = selectorValue($("#sell_potion__ingredient2")[0]);
+  if (ingredient1 == ingredient2){ return };
   var target = selectorValue($("#sell_potion__target")[0]);
   var pseudoResult = selectorValue($("#sell_potion__result")[0]);
   var resultMatrix = {
