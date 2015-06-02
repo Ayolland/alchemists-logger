@@ -64,18 +64,28 @@ function selectorValue(selectTag){
 
 function markResult(ingredient1,ingredient2,result){
   if (result == null){ return };
-  var targetBubble = $("." + ingredient1).filter("." + ingredient2);
-  var polarity = result.slice(-4)
-  if (polarity == "tral") {
-    polarity = "neutral"
-  } else if (polarity == "inus"){
-    polarity = "minus";
-  } else if (polarity == "plus"){
-    polarity = "plus";
+  var $targetBubble = $("." + ingredient1).filter("." + ingredient2);
+  if(!(result.length > 10)&&!(result.slice(0,3) == "bla")){
+    var definiteResults = [
+      "redplus",
+      "redminus",
+      "greenplus",
+      "greenminus",
+      "blueplus",
+      "blueminus",
+      "neutral"
+    ]
+    for (i = 0; i < definiteResults.length; i++){
+      var current = definiteResults[i]
+      if ($targetBubble.hasClass("potion-" + current)){
+        if (result != current){
+          $targetBubble.addClass("ERROR");
+        }
+      };
+    };
+
   };
-  var imgTag = "<img src='polarities/" + polarity + ".png'>"
-  targetBubble.addClass("potion-" + result);
-  targetBubble[0].innerHTML = imgTag;
+  $targetBubble.addClass("potion-" + result);
   hasComponent(ingredient1,result);
   hasComponent(ingredient2,result);
 };

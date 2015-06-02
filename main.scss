@@ -114,7 +114,7 @@ body{
   .results-tree__row{
     width: 100%;
     text-align: center;
-    div{
+    div.bubble{
       width: $bubble-size;
       height: $bubble-size;
       color: white;
@@ -146,9 +146,6 @@ body{
       &.potion-neutral{
         background: gray;
       };
-      img{
-        width: 100%;
-      }
     }
     .results-tree__element{
       vertical-align: top;
@@ -157,6 +154,30 @@ body{
   }
 }
 
+div.icon{
+  width: 100%;
+  height: 100%;
+}
+
+.potion-greenplus .icon, .potion-blueplus .icon, .potion-redplus .icon, .potion-blankplus .icon, .potion-blueredplus .icon, .potion-redgreenplus .icon, .potion-greenblueplus .icon{
+  background: url('polarities/plus.png');
+  background-size: cover;
+}
+
+.potion-greenminus .icon, .potion-blueminus .icon, .potion-redminus .icon, .potion-blanminlus .icon, .potion-blueredminus .icon, .potion-redgreenminus .icon, .potion-greenblueminus .icon{
+  background: url('polarities/minus.png');
+  background-size: cover;
+}
+
+.potion-neutral .icon{
+  background: url('polarities/neutral.png');
+  background-size: cover;
+}
+
+.ERROR .icon{
+  background: url('polarities/error.png');
+  background-size: cover;
+}
 
 .answer-grid{
   display: table;

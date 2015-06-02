@@ -51,7 +51,7 @@ body {
   .results-tree .results-tree__row {
     width: 100%;
     text-align: center; }
-    .results-tree .results-tree__row div {
+    .results-tree .results-tree__row div.bubble {
       width: 28px;
       height: 28px;
       color: white;
@@ -59,27 +59,45 @@ body {
       font-size: 24px;
       line-height: 1;
       vertical-align: top; }
-      .results-tree .results-tree__row div.potion-blankplus, .results-tree .results-tree__row div.potion-blankminus {
+      .results-tree .results-tree__row div.bubble.potion-blankplus, .results-tree .results-tree__row div.bubble.potion-blankminus {
         background: gray; }
-      .results-tree .results-tree__row div.potion-redgreenminus, .results-tree .results-tree__row div.potion-redgreenplus {
+      .results-tree .results-tree__row div.bubble.potion-redgreenminus, .results-tree .results-tree__row div.bubble.potion-redgreenplus {
         background: linear-gradient(red, green); }
-      .results-tree .results-tree__row div.potion-greenblueminus, .results-tree .results-tree__row div.potion-greenblueplus {
+      .results-tree .results-tree__row div.bubble.potion-greenblueminus, .results-tree .results-tree__row div.bubble.potion-greenblueplus {
         background: linear-gradient(green, blue); }
-      .results-tree .results-tree__row div.potion-blueredminus, .results-tree .results-tree__row div.potion-blueredplus {
+      .results-tree .results-tree__row div.bubble.potion-blueredminus, .results-tree .results-tree__row div.bubble.potion-blueredplus {
         background: linear-gradient(blue, red); }
-      .results-tree .results-tree__row div.potion-greenplus, .results-tree .results-tree__row div.potion-greenminus {
+      .results-tree .results-tree__row div.bubble.potion-greenplus, .results-tree .results-tree__row div.bubble.potion-greenminus {
         background: green; }
-      .results-tree .results-tree__row div.potion-redplus, .results-tree .results-tree__row div.potion-redminus {
+      .results-tree .results-tree__row div.bubble.potion-redplus, .results-tree .results-tree__row div.bubble.potion-redminus {
         background: red; }
-      .results-tree .results-tree__row div.potion-blueplus, .results-tree .results-tree__row div.potion-blueminus {
+      .results-tree .results-tree__row div.bubble.potion-blueplus, .results-tree .results-tree__row div.bubble.potion-blueminus {
         background: blue; }
-      .results-tree .results-tree__row div.potion-neutral {
+      .results-tree .results-tree__row div.bubble.potion-neutral {
         background: gray; }
-      .results-tree .results-tree__row div img {
-        width: 100%; }
     .results-tree .results-tree__row .results-tree__element {
       vertical-align: top;
       color: white; }
+
+div.icon {
+  width: 100%;
+  height: 100%; }
+
+.potion-greenplus .icon, .potion-blueplus .icon, .potion-redplus .icon, .potion-blankplus .icon, .potion-blueredplus .icon, .potion-redgreenplus .icon, .potion-greenblueplus .icon {
+  background: url("polarities/plus.png");
+  background-size: cover; }
+
+.potion-greenminus .icon, .potion-blueminus .icon, .potion-redminus .icon, .potion-blanminlus .icon, .potion-blueredminus .icon, .potion-redgreenminus .icon, .potion-greenblueminus .icon {
+  background: url("polarities/minus.png");
+  background-size: cover; }
+
+.potion-neutral .icon {
+  background: url("polarities/neutral.png");
+  background-size: cover; }
+
+.ERROR .icon {
+  background: url("polarities/error.png");
+  background-size: cover; }
 
 .answer-grid {
   display: table;
