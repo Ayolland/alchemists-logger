@@ -1,10 +1,10 @@
 @mixin results($color-map){
   @each $ingredient, $color in $color-map{
-    .results-tree__element.#{$ingredient}{
-  
-        background-image: url("ingredients/#{$ingredient}.png");
-        background-size: cover;
-
+    .results-tree__element.#{$ingredient}, .bubble.element.#{$ingredient}{
+      background-image: url("ingredients/#{$ingredient}.png");
+      background-size: cover;
+      background-color: mix($color, lightgray);
+      border: 3px solid $color;
     }
     .#{$ingredient}-left{
       border-left: 3px solid $color;
@@ -254,13 +254,20 @@ div#log{
     top: ($iphone5 * .5) + $margin;
   }
   ul#log__list{
+    padding: 0;
     li{
-    list-style: circle;
+    list-style: none;
+    padding: $margin;
+    background-color: $paper;
+      &:nth-child(odd){
+        background-color: mix($paper, whitesmoke);
+      }
     }
   }
   .bubble{
-    width: $bubble-size * .5;
-    height: $bubble-size * .5;
+    width: $bubble-size ;
+    height: $bubble-size ;
+    vertical-align: middle;
   }
 }
  

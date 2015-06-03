@@ -183,15 +183,24 @@ div#log {
   @media screen and (min-width: 805px) {
     div#log {
       top: 165px; } }
-  div#log ul#log__list li {
-    list-style: circle; }
+  div#log ul#log__list {
+    padding: 0; }
+    div#log ul#log__list li {
+      list-style: none;
+      padding: 5px;
+      background-color: #DDC; }
+      div#log ul#log__list li:nth-child(odd) {
+        background-color: #e9e9e0; }
   div#log .bubble {
-    width: 14px;
-    height: 14px; }
+    width: 28px;
+    height: 28px;
+    vertical-align: middle; }
 
-.results-tree__element.mushroom {
+.results-tree__element.mushroom, .bubble.element.mushroom {
   background-image: url("ingredients/mushroom.png");
-  background-size: cover; }
+  background-size: cover;
+  background-color: #a969a9;
+  border: 3px solid purple; }
 
 .mushroom-left {
   border-left: 3px solid purple;
@@ -219,9 +228,11 @@ div#log {
   padding: 5px;
   border: 1px solid purple; }
 
-.results-tree__element.fern {
+.results-tree__element.fern, .bubble.element.fern {
   background-image: url("ingredients/fern.png");
-  background-size: cover; }
+  background-size: cover;
+  background-color: #7aaf7a;
+  border: 3px solid forestgreen; }
 
 .fern-left {
   border-left: 3px solid forestgreen;
@@ -249,9 +260,11 @@ div#log {
   padding: 5px;
   border: 1px solid forestgreen; }
 
-.results-tree__element.toad {
+.results-tree__element.toad, .bubble.element.toad {
   background-image: url("ingredients/toad.png");
-  background-size: cover; }
+  background-size: cover;
+  background-color: #b99280;
+  border: 3px solid sienna; }
 
 .toad-left {
   border-left: 3px solid sienna;
@@ -279,9 +292,11 @@ div#log {
   padding: 5px;
   border: 1px solid sienna; }
 
-.results-tree__element.foot {
+.results-tree__element.foot, .bubble.element.foot {
   background-image: url("ingredients/foot.png");
-  background-size: cover; }
+  background-size: cover;
+  background-color: #e9d569;
+  border: 3px solid gold; }
 
 .foot-left {
   border-left: 3px solid gold;
@@ -309,9 +324,11 @@ div#log {
   padding: 5px;
   border: 1px solid gold; }
 
-.results-tree__element.flower {
+.results-tree__element.flower, .bubble.element.flower {
   background-image: url("ingredients/flower.png");
-  background-size: cover; }
+  background-size: cover;
+  background-color: #6969af;
+  border: 3px solid darkblue; }
 
 .flower-left {
   border-left: 3px solid darkblue;
@@ -339,9 +356,11 @@ div#log {
   padding: 5px;
   border: 1px solid darkblue; }
 
-.results-tree__element.root {
+.results-tree__element.root, .bubble.element.root {
   background-image: url("ingredients/root.png");
-  background-size: cover; }
+  background-size: cover;
+  background-color: #d2c3af;
+  border: 3px solid tan; }
 
 .root-left {
   border-left: 3px solid tan;
@@ -369,9 +388,11 @@ div#log {
   padding: 5px;
   border: 1px solid tan; }
 
-.results-tree__element.scorpion {
+.results-tree__element.scorpion, .bubble.element.scorpion {
   background-image: url("ingredients/scorpion.png");
-  background-size: cover; }
+  background-size: cover;
+  background-color: #af6969;
+  border: 3px solid darkred; }
 
 .scorpion-left {
   border-left: 3px solid darkred;
@@ -399,9 +420,11 @@ div#log {
   padding: 5px;
   border: 1px solid darkred; }
 
-.results-tree__element.feather {
+.results-tree__element.feather, .bubble.element.feather {
   background-image: url("ingredients/feather.png");
-  background-size: cover; }
+  background-size: cover;
+  background-color: #9e9e9e;
+  border: 3px solid dimgray; }
 
 .feather-left {
   border-left: 3px solid dimgray;
