@@ -1,10 +1,10 @@
 @mixin results($color-map){
   @each $ingredient, $color in $color-map{
     .results-tree__element.#{$ingredient}{
-      div.icon{
-        background: url("ingredients/#{$ingredient}.png");
+  
+        background-image: url("ingredients/#{$ingredient}.png");
         background-size: cover;
-      }
+
     }
     .#{$ingredient}-left{
       border-left: 3px solid $color;
@@ -14,32 +14,93 @@
     .#{$ingredient}-right{
       border-right: 3px solid $color;
       border-bottom: 3px solid $color;
-      background: mix($color, lightgray);
+      background-color: mix($color, lightgray);
     }
     
     .#{$ingredient}-back{
-      background: darken($color, 15%);
+      background-color: darken($color, 15%);
     }
     
     .answer-grid__answer.#{$ingredient}{
       background: mix($color, lightgray);
       border: 1px solid mix($color, dimgray);
         &.true{
-            background: lighten($color, 40%);
+            background-color: lighten($color, 40%);
 
         }
         &.false{
-              background: mix($color, black);
+              background-color: mix($color, black);
               border: 1px solid black;
         }
     }
+    #log span.#{$ingredient}{
+      background-color: mix($color, lightgray);
+      padding: $margin;
+      border: 1px solid $color;
+    }
+  }
+}
+
+@mixin single-colors($list){
+  @each $color in $list{
+    &.potion-#{$color}plus{
+      background-color: #{$color};
+      background-image: url('polarities/plus.png');
+      background-size: cover
+    }
+    &.potion-#{$color}minus{
+      background-color: #{$color};
+      background-image: url('polarities/minus.png');
+      background-size: cover
+    }
+  }
+}
+
+@mixin double-colors($nested-lists){
+  @each $colors in $nested-lists{
+    $color1: nth($colors, 1);
+    $color2: nth($colors, 2);
+    $badcolor: nth($colors, 3);
+    &.potion-#{$color1 + $color2}plus{
+      background-image: url("polarities/plus.png"), linear-gradient(#{$color1} , #{$color2});
+      background-size: cover;
+    }
+    &.potion-#{$color1 + $color2}minus{
+      background-image: url("polarities/minus.png"), linear-gradient(#{$color1} , #{$color2});
+      background-size: cover;
+    }
+    &.potion-#{$color1 + $color2}minus.potion-#{$badcolor}plus, &.potion-#{$color1 + $color2}minus.potion-#{$badcolor}minus{
+      background-image: url("polarities/unknown.png");
+      background-size: cover;
+    }
+  }
+}
+
+@mixin pop-block{
+  background: darken($paper, 15%);
+  width: 100%;
+  max-width: $wider;
+  margin: $margin auto;
+  padding: $margin;
+  @media screen and (min-width: $non-mobile-break) {
+    position: absolute;
+    width: $wider;
+    left: $iphone5 + $margin;
+  }
+  h3{
+    text-align: center;
+    margin: $margin auto;
+    font-size: 15px;
+    text-transform: uppercase;
+    
   }
 }
 
 $paper: #DDC;
 $margin: 5px;
 $iphone5: 320px;
-$bubble-font-size: 24px;
+$wider: 480px;
+$bubble-size: 28px;
 $ingredient-colors:(
   mushroom: purple,
   fern: forestgreen,
@@ -50,43 +111,50 @@ $ingredient-colors:(
   scorpion: darkred,
   feather: dimgray
 );
-$non-mobile-break: 700px;
+$gradients:(
+  "red" "green" "blue",
+  "green" "blue" "red",
+  "blue" "red" "green"
+);
+$rgb: ("red","blue","green");
+$non-mobile-break: $iphone5 + $wider + $margin;
 
 .bubble{
   border-radius: 50%;
   display: inline-block;
+  @include single-colors($rgb);
+  @include double-colors($gradients);
+  &.potion-neutral{
+    background-color: gray;
+    background-image: url('polarities/neutral.png');
+    background-size: cover
+  };
+  &.ERROR, &.unknown{
+    background-image: url('polarities/unknown.png');
+    background-size: cover;
+  }
 }
 
 body{
   background: $paper;
   margin: 0;
   @media screen and (min-width: $non-mobile-break) {
-    width: 700px;
+    width: $non-mobile-break;
     position: relative;
     margin: 0 auto;
   }
 }
 
 .controls{
-  background: darken($paper, 15%);
-  width: $iphone5;
-  margin: $margin auto;
-  padding: $margin;
+  @include pop-block;
+  
   @media screen and (min-width: $non-mobile-break) {
     position: absolute;
-    left: 50%;
-    top: 20%;
-    width: auto;
+    top: $margin;
   }
   .control-group{
     text-align: center;
     width: 100%;
-    .control-group__title{
-      margin: $margin auto;
-      font-size: 15px;
-      text-transform: uppercase;
-      
-    }
     .control-group__select{
       width: 15%;
       display: inline-block;
@@ -96,7 +164,6 @@ body{
       }
     }
     .control-group__operator{
-      font: normal normal normal 11px/normal '.HelveticaNeueDeskInterface-Regular';
       text-align: center;
       width: 2.5%;
       display: inline-block;
@@ -105,11 +172,10 @@ body{
 }
 
 .results-tree{
-  $bubble-size: 28px;
   width: $iphone5;
   margin: 0 auto;
   @media screen and (min-width: $non-mobile-break) {
-    margin: 5px 0;
+    margin: $margin 0;
   }
   .results-tree__row{
     width: 100%;
@@ -117,35 +183,9 @@ body{
     div.bubble{
       width: $bubble-size;
       height: $bubble-size;
-      color: white;
       overflow: hidden;
-      font-size: $bubble-font-size;
       line-height: 1;
       vertical-align: top;
-      &.potion-blankplus,&.potion-blankminus{
-        background: gray;
-      };
-      &.potion-redgreenminus,&.potion-redgreenplus{
-        background: linear-gradient(red,green);
-      };
-      &.potion-greenblueminus,&.potion-greenblueplus{
-        background: linear-gradient(green,blue);
-      };
-      &.potion-blueredminus,&.potion-blueredplus{
-        background: linear-gradient(blue,red);
-      };
-      &.potion-greenplus,&.potion-greenminus{
-        background: green;
-      };
-      &.potion-redplus,&.potion-redminus{
-        background: red;
-      };
-      &.potion-blueplus,&.potion-blueminus{
-        background: blue;
-      };
-      &.potion-neutral{
-        background: gray;
-      };
     }
     .results-tree__element{
       vertical-align: top;
@@ -154,37 +194,12 @@ body{
   }
 }
 
-div.icon{
-  width: 100%;
-  height: 100%;
-}
-
-.potion-greenplus .icon, .potion-blueplus .icon, .potion-redplus .icon, .potion-blankplus .icon, .potion-blueredplus .icon, .potion-redgreenplus .icon, .potion-greenblueplus .icon{
-  background: url('polarities/plus.png');
-  background-size: cover;
-}
-
-.potion-greenminus .icon, .potion-blueminus .icon, .potion-redminus .icon, .potion-blanminlus .icon, .potion-blueredminus .icon, .potion-redgreenminus .icon, .potion-greenblueminus .icon{
-  background: url('polarities/minus.png');
-  background-size: cover;
-}
-
-.potion-neutral .icon{
-  background: url('polarities/neutral.png');
-  background-size: cover;
-}
-
-.ERROR .icon{
-  background: url('polarities/error.png');
-  background-size: cover;
-}
-
 .answer-grid{
   display: table;
   width: $iphone5;
   margin: 5px auto;
   @media screen and (min-width: $non-mobile-break) {
-    margin: 5px 0;
+    margin: $margin 0;
   }
   .answer-grid__row{
     width: 100%;
@@ -193,7 +208,34 @@ div.icon{
       box-sizing: border-box;
       display: table-cell;
       width: 12.5%;
-      height: 30px;
+      height: 35px;
+      background-size: 90%;
+      background-position: center;
+      background-repeat: no-repeat;
+      &.type1{
+        background-image: url('elements/rs-gs+BL-.svg');
+      }
+      &.type2{
+        background-image: url('elements/rs+gs-BL+.svg');
+      }
+      &.type3{
+        background-image: url('elements/rs+GL-bs-.svg');
+      }
+      &.type4{
+        background-image: url('elements/rs-GL+bs+.svg');
+      }
+      &.type5{
+        background-image: url('elements/RL-gs-bs+.svg');
+      }
+      &.type6{
+        background-image: url('elements/RL+gs+bs-.svg');
+      }
+      &.type7{
+        background-image: url('elements/rs-gs-bs-.svg');
+      }
+      &.type8{
+        background-image: url('elements/RL+GL+BL+.svg');
+      }
     }
     .answer-grid__answer.guess{
       border: 5px double #FFF;
@@ -201,9 +243,25 @@ div.icon{
     .answer-grid__answer > img {
       margin: 3px;
       vertical-align: middle;
+      display: none;
     }
   }
 }
 
+div#log{
+  @include pop-block;
+  @media screen and (min-width: $non-mobile-break) {
+    top: ($iphone5 * .5) + $margin;
+  }
+  ul#log__list{
+    li{
+    list-style: circle;
+    }
+  }
+  .bubble{
+    width: $bubble-size * .5;
+    height: $bubble-size * .5;
+  }
+}
  
-@include results($ingredient-colors)
+@include results($ingredient-colors);

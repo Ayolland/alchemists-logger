@@ -1,43 +1,105 @@
 .bubble {
   border-radius: 50%;
   display: inline-block; }
+  .bubble.potion-redplus {
+    background-color: red;
+    background-image: url("polarities/plus.png");
+    background-size: cover; }
+  .bubble.potion-redminus {
+    background-color: red;
+    background-image: url("polarities/minus.png");
+    background-size: cover; }
+  .bubble.potion-blueplus {
+    background-color: blue;
+    background-image: url("polarities/plus.png");
+    background-size: cover; }
+  .bubble.potion-blueminus {
+    background-color: blue;
+    background-image: url("polarities/minus.png");
+    background-size: cover; }
+  .bubble.potion-greenplus {
+    background-color: green;
+    background-image: url("polarities/plus.png");
+    background-size: cover; }
+  .bubble.potion-greenminus {
+    background-color: green;
+    background-image: url("polarities/minus.png");
+    background-size: cover; }
+  .bubble.potion-redgreenplus {
+    background-image: url("polarities/plus.png"), linear-gradient(red, green);
+    background-size: cover; }
+  .bubble.potion-redgreenminus {
+    background-image: url("polarities/minus.png"), linear-gradient(red, green);
+    background-size: cover; }
+  .bubble.potion-redgreenminus.potion-blueplus, .bubble.potion-redgreenminus.potion-blueminus {
+    background-image: url("polarities/unknown.png");
+    background-size: cover; }
+  .bubble.potion-greenblueplus {
+    background-image: url("polarities/plus.png"), linear-gradient(green, blue);
+    background-size: cover; }
+  .bubble.potion-greenblueminus {
+    background-image: url("polarities/minus.png"), linear-gradient(green, blue);
+    background-size: cover; }
+  .bubble.potion-greenblueminus.potion-redplus, .bubble.potion-greenblueminus.potion-redminus {
+    background-image: url("polarities/unknown.png");
+    background-size: cover; }
+  .bubble.potion-blueredplus {
+    background-image: url("polarities/plus.png"), linear-gradient(blue, red);
+    background-size: cover; }
+  .bubble.potion-blueredminus {
+    background-image: url("polarities/minus.png"), linear-gradient(blue, red);
+    background-size: cover; }
+  .bubble.potion-blueredminus.potion-greenplus, .bubble.potion-blueredminus.potion-greenminus {
+    background-image: url("polarities/unknown.png");
+    background-size: cover; }
+  .bubble.potion-neutral {
+    background-color: gray;
+    background-image: url("polarities/neutral.png");
+    background-size: cover; }
+  .bubble.ERROR, .bubble.unknown {
+    background-image: url("polarities/unknown.png");
+    background-size: cover; }
 
 body {
   background: #DDC;
   margin: 0; }
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 805px) {
     body {
-      width: 700px;
+      width: 805px;
       position: relative;
       margin: 0 auto; } }
 
 .controls {
   background: #bebe9e;
-  width: 320px;
+  width: 100%;
+  max-width: 480px;
   margin: 5px auto;
   padding: 5px; }
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 805px) {
     .controls {
       position: absolute;
-      left: 50%;
-      top: 20%;
-      width: auto; } }
+      width: 480px;
+      left: 325px; } }
+  .controls h3 {
+    text-align: center;
+    margin: 5px auto;
+    font-size: 15px;
+    text-transform: uppercase; }
+  @media screen and (min-width: 805px) {
+    .controls {
+      position: absolute;
+      top: 5px; } }
   .controls .control-group {
     text-align: center;
     width: 100%; }
-    .controls .control-group .control-group__title {
-      margin: 5px auto;
-      font-size: 15px;
-      text-transform: uppercase; }
     .controls .control-group .control-group__select {
       width: 15%;
       display: inline-block;
       background: #a0a070; }
-      @media screen and (min-width: 700px) {
+      @media screen and (min-width: 805px) {
         .controls .control-group .control-group__select {
           width: auto; } }
     .controls .control-group .control-group__operator {
-      font: normal normal normal 11px/normal '.HelveticaNeueDeskInterface-Regular';
       text-align: center;
       width: 2.5%;
       display: inline-block; }
@@ -45,7 +107,7 @@ body {
 .results-tree {
   width: 320px;
   margin: 0 auto; }
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 805px) {
     .results-tree {
       margin: 5px 0; } }
   .results-tree .results-tree__row {
@@ -54,56 +116,18 @@ body {
     .results-tree .results-tree__row div.bubble {
       width: 28px;
       height: 28px;
-      color: white;
       overflow: hidden;
-      font-size: 24px;
       line-height: 1;
       vertical-align: top; }
-      .results-tree .results-tree__row div.bubble.potion-blankplus, .results-tree .results-tree__row div.bubble.potion-blankminus {
-        background: gray; }
-      .results-tree .results-tree__row div.bubble.potion-redgreenminus, .results-tree .results-tree__row div.bubble.potion-redgreenplus {
-        background: linear-gradient(red, green); }
-      .results-tree .results-tree__row div.bubble.potion-greenblueminus, .results-tree .results-tree__row div.bubble.potion-greenblueplus {
-        background: linear-gradient(green, blue); }
-      .results-tree .results-tree__row div.bubble.potion-blueredminus, .results-tree .results-tree__row div.bubble.potion-blueredplus {
-        background: linear-gradient(blue, red); }
-      .results-tree .results-tree__row div.bubble.potion-greenplus, .results-tree .results-tree__row div.bubble.potion-greenminus {
-        background: green; }
-      .results-tree .results-tree__row div.bubble.potion-redplus, .results-tree .results-tree__row div.bubble.potion-redminus {
-        background: red; }
-      .results-tree .results-tree__row div.bubble.potion-blueplus, .results-tree .results-tree__row div.bubble.potion-blueminus {
-        background: blue; }
-      .results-tree .results-tree__row div.bubble.potion-neutral {
-        background: gray; }
     .results-tree .results-tree__row .results-tree__element {
       vertical-align: top;
       color: white; }
-
-div.icon {
-  width: 100%;
-  height: 100%; }
-
-.potion-greenplus .icon, .potion-blueplus .icon, .potion-redplus .icon, .potion-blankplus .icon, .potion-blueredplus .icon, .potion-redgreenplus .icon, .potion-greenblueplus .icon {
-  background: url("polarities/plus.png");
-  background-size: cover; }
-
-.potion-greenminus .icon, .potion-blueminus .icon, .potion-redminus .icon, .potion-blanminlus .icon, .potion-blueredminus .icon, .potion-redgreenminus .icon, .potion-greenblueminus .icon {
-  background: url("polarities/minus.png");
-  background-size: cover; }
-
-.potion-neutral .icon {
-  background: url("polarities/neutral.png");
-  background-size: cover; }
-
-.ERROR .icon {
-  background: url("polarities/error.png");
-  background-size: cover; }
 
 .answer-grid {
   display: table;
   width: 320px;
   margin: 5px auto; }
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 805px) {
     .answer-grid {
       margin: 5px 0; } }
   .answer-grid .answer-grid__row {
@@ -113,15 +137,60 @@ div.icon {
       box-sizing: border-box;
       display: table-cell;
       width: 12.5%;
-      height: 30px; }
+      height: 35px;
+      background-size: 90%;
+      background-position: center;
+      background-repeat: no-repeat; }
+      .answer-grid .answer-grid__row .answer-grid__answer.type1 {
+        background-image: url("elements/rs-gs+BL-.svg"); }
+      .answer-grid .answer-grid__row .answer-grid__answer.type2 {
+        background-image: url("elements/rs+gs-BL+.svg"); }
+      .answer-grid .answer-grid__row .answer-grid__answer.type3 {
+        background-image: url("elements/rs+GL-bs-.svg"); }
+      .answer-grid .answer-grid__row .answer-grid__answer.type4 {
+        background-image: url("elements/rs-GL+bs+.svg"); }
+      .answer-grid .answer-grid__row .answer-grid__answer.type5 {
+        background-image: url("elements/RL-gs-bs+.svg"); }
+      .answer-grid .answer-grid__row .answer-grid__answer.type6 {
+        background-image: url("elements/RL+gs+bs-.svg"); }
+      .answer-grid .answer-grid__row .answer-grid__answer.type7 {
+        background-image: url("elements/rs-gs-bs-.svg"); }
+      .answer-grid .answer-grid__row .answer-grid__answer.type8 {
+        background-image: url("elements/RL+GL+BL+.svg"); }
     .answer-grid .answer-grid__row .answer-grid__answer.guess {
       border: 5px double #FFF; }
     .answer-grid .answer-grid__row .answer-grid__answer > img {
       margin: 3px;
-      vertical-align: middle; }
+      vertical-align: middle;
+      display: none; }
 
-.results-tree__element.mushroom div.icon {
-  background: url("ingredients/mushroom.png");
+div#log {
+  background: #bebe9e;
+  width: 100%;
+  max-width: 480px;
+  margin: 5px auto;
+  padding: 5px; }
+  @media screen and (min-width: 805px) {
+    div#log {
+      position: absolute;
+      width: 480px;
+      left: 325px; } }
+  div#log h3 {
+    text-align: center;
+    margin: 5px auto;
+    font-size: 15px;
+    text-transform: uppercase; }
+  @media screen and (min-width: 805px) {
+    div#log {
+      top: 165px; } }
+  div#log ul#log__list li {
+    list-style: circle; }
+  div#log .bubble {
+    width: 14px;
+    height: 14px; }
+
+.results-tree__element.mushroom {
+  background-image: url("ingredients/mushroom.png");
   background-size: cover; }
 
 .mushroom-left {
@@ -131,22 +200,27 @@ div.icon {
 .mushroom-right {
   border-right: 3px solid purple;
   border-bottom: 3px solid purple;
-  background: #a969a9; }
+  background-color: #a969a9; }
 
 .mushroom-back {
-  background: #340033; }
+  background-color: #340033; }
 
 .answer-grid__answer.mushroom {
   background: #a969a9;
   border: 1px solid #743474; }
   .answer-grid__answer.mushroom.true {
-    background: #ff4dff; }
+    background-color: #ff4dff; }
   .answer-grid__answer.mushroom.false {
-    background: #400040;
+    background-color: #400040;
     border: 1px solid black; }
 
-.results-tree__element.fern div.icon {
-  background: url("ingredients/fern.png");
+#log span.mushroom {
+  background-color: #a969a9;
+  padding: 5px;
+  border: 1px solid purple; }
+
+.results-tree__element.fern {
+  background-image: url("ingredients/fern.png");
   background-size: cover; }
 
 .fern-left {
@@ -156,22 +230,27 @@ div.icon {
 .fern-right {
   border-right: 3px solid forestgreen;
   border-bottom: 3px solid forestgreen;
-  background: #7aaf7a; }
+  background-color: #7aaf7a; }
 
 .fern-back {
-  background: #134e13; }
+  background-color: #134e13; }
 
 .answer-grid__answer.fern {
   background: #7aaf7a;
   border: 1px solid #457a45; }
   .answer-grid__answer.fern.true {
-    background: #94e594; }
+    background-color: #94e594; }
   .answer-grid__answer.fern.false {
-    background: #114511;
+    background-color: #114511;
     border: 1px solid black; }
 
-.results-tree__element.toad div.icon {
-  background: url("ingredients/toad.png");
+#log span.fern {
+  background-color: #7aaf7a;
+  padding: 5px;
+  border: 1px solid forestgreen; }
+
+.results-tree__element.toad {
+  background-image: url("ingredients/toad.png");
   background-size: cover; }
 
 .toad-left {
@@ -181,22 +260,27 @@ div.icon {
 .toad-right {
   border-right: 3px solid sienna;
   border-bottom: 3px solid sienna;
-  background: #b99280; }
+  background-color: #b99280; }
 
 .toad-back {
-  background: #64331c; }
+  background-color: #64331c; }
 
 .answer-grid__answer.toad {
   background: #b99280;
   border: 1px solid #845d4b; }
   .answer-grid__answer.toad.true {
-    background: #e9c2b0; }
+    background-color: #e9c2b0; }
   .answer-grid__answer.toad.false {
-    background: #502916;
+    background-color: #502916;
     border: 1px solid black; }
 
-.results-tree__element.foot div.icon {
-  background: url("ingredients/foot.png");
+#log span.toad {
+  background-color: #b99280;
+  padding: 5px;
+  border: 1px solid sienna; }
+
+.results-tree__element.foot {
+  background-image: url("ingredients/foot.png");
   background-size: cover; }
 
 .foot-left {
@@ -206,22 +290,27 @@ div.icon {
 .foot-right {
   border-right: 3px solid gold;
   border-bottom: 3px solid gold;
-  background: #e9d569; }
+  background-color: #e9d569; }
 
 .foot-back {
-  background: #b39700; }
+  background-color: #b39700; }
 
 .answer-grid__answer.foot {
   background: #e9d569;
   border: 1px solid #b4a034; }
   .answer-grid__answer.foot.true {
-    background: #fff7cc; }
+    background-color: #fff7cc; }
   .answer-grid__answer.foot.false {
-    background: #7f6b00;
+    background-color: #7f6b00;
     border: 1px solid black; }
 
-.results-tree__element.flower div.icon {
-  background: url("ingredients/flower.png");
+#log span.foot {
+  background-color: #e9d569;
+  padding: 5px;
+  border: 1px solid gold; }
+
+.results-tree__element.flower {
+  background-image: url("ingredients/flower.png");
   background-size: cover; }
 
 .flower-left {
@@ -231,22 +320,27 @@ div.icon {
 .flower-right {
   border-right: 3px solid darkblue;
   border-bottom: 3px solid darkblue;
-  background: #6969af; }
+  background-color: #6969af; }
 
 .flower-back {
-  background: #00003f; }
+  background-color: #00003f; }
 
 .answer-grid__answer.flower {
   background: #6969af;
   border: 1px solid #34347a; }
   .answer-grid__answer.flower.true {
-    background: #5858ff; }
+    background-color: #5858ff; }
   .answer-grid__answer.flower.false {
-    background: #000045;
+    background-color: #000045;
     border: 1px solid black; }
 
-.results-tree__element.root div.icon {
-  background: url("ingredients/root.png");
+#log span.flower {
+  background-color: #6969af;
+  padding: 5px;
+  border: 1px solid darkblue; }
+
+.results-tree__element.root {
+  background-image: url("ingredients/root.png");
   background-size: cover; }
 
 .root-left {
@@ -256,22 +350,27 @@ div.icon {
 .root-right {
   border-right: 3px solid tan;
   border-bottom: 3px solid tan;
-  background: #d2c3af; }
+  background-color: #d2c3af; }
 
 .root-back {
-  background: #bc9055; }
+  background-color: #bc9055; }
 
 .answer-grid__answer.root {
   background: #d2c3af;
   border: 1px solid #9d8e7a; }
   .answer-grid__answer.root.true {
-    background: white; }
+    background-color: white; }
   .answer-grid__answer.root.false {
-    background: #695a46;
+    background-color: #695a46;
     border: 1px solid black; }
 
-.results-tree__element.scorpion div.icon {
-  background: url("ingredients/scorpion.png");
+#log span.root {
+  background-color: #d2c3af;
+  padding: 5px;
+  border: 1px solid tan; }
+
+.results-tree__element.scorpion {
+  background-image: url("ingredients/scorpion.png");
   background-size: cover; }
 
 .scorpion-left {
@@ -281,22 +380,27 @@ div.icon {
 .scorpion-right {
   border-right: 3px solid darkred;
   border-bottom: 3px solid darkred;
-  background: #af6969; }
+  background-color: #af6969; }
 
 .scorpion-back {
-  background: #3f0000; }
+  background-color: #3f0000; }
 
 .answer-grid__answer.scorpion {
   background: #af6969;
   border: 1px solid #7a3434; }
   .answer-grid__answer.scorpion.true {
-    background: #ff5858; }
+    background-color: #ff5858; }
   .answer-grid__answer.scorpion.false {
-    background: #450000;
+    background-color: #450000;
     border: 1px solid black; }
 
-.results-tree__element.feather div.icon {
-  background: url("ingredients/feather.png");
+#log span.scorpion {
+  background-color: #af6969;
+  padding: 5px;
+  border: 1px solid darkred; }
+
+.results-tree__element.feather {
+  background-image: url("ingredients/feather.png");
   background-size: cover; }
 
 .feather-left {
@@ -306,18 +410,23 @@ div.icon {
 .feather-right {
   border-right: 3px solid dimgray;
   border-bottom: 3px solid dimgray;
-  background: #9e9e9e; }
+  background-color: #9e9e9e; }
 
 .feather-back {
-  background: #434343; }
+  background-color: #434343; }
 
 .answer-grid__answer.feather {
   background: #9e9e9e;
   border: 1px solid dimgray; }
   .answer-grid__answer.feather.true {
-    background: #cfcfcf; }
+    background-color: #cfcfcf; }
   .answer-grid__answer.feather.false {
-    background: #343434;
+    background-color: #343434;
     border: 1px solid black; }
+
+#log span.feather {
+  background-color: #9e9e9e;
+  padding: 5px;
+  border: 1px solid dimgray; }
 
 /*# sourceMappingURL=main.css.map */

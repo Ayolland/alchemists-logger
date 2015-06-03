@@ -36,12 +36,12 @@ function sellPotion(){
   var target = selectorValue($("#sell_potion__target")[0]);
   var pseudoResult = selectorValue($("#sell_potion__result")[0]);
   var resultMatrix = {
-    "redplus":["redplus","greenblueplus","neutral","blankminus"],
-    "redminus": ["redminus","greenblueminus","neutral","blankplus"],
-    "greeenplus": ["greenplus","blueredplus","neutral","blankminus"],
-    "greenminus": ["greenminus","blueredminus","neutral","blankplus"],
-    "blueplus": ["blueplus","redgreenplus","neutral","blankminus"],
-    "blueminus": ["blueminus","redgreenminus","neutral","blankplus"]
+    "redplus":["redplus","greenblueplus","neutral","grayminus"],
+    "redminus": ["redminus","greenblueminus","neutral","grayplus"],
+    "greenplus": ["greenplus","blueredplus","neutral","grayminus"],
+    "greenminus": ["greenminus","blueredminus","neutral","grayplus"],
+    "blueplus": ["blueplus","redgreenplus","neutral","grayminus"],
+    "blueminus": ["blueminus","redgreenminus","neutral","grayplus"]
   }
   var result = resultMatrix[target][pseudoResult]
   markResult(ingredient1,ingredient2,result);
