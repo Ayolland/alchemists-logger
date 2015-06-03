@@ -100,7 +100,7 @@ $paper: #DDC;
 $margin: 5px;
 $iphone5: 320px;
 $wider: 480px;
-$bubble-size: 28px;
+$bubble-size: 35px;
 $ingredient-colors:(
   mushroom: purple,
   fern: forestgreen,
@@ -116,8 +116,15 @@ $gradients:(
   "green" "blue" "red",
   "blue" "red" "green"
 );
-$rgb: ("red","blue","green");
+$rgb: ("red","blue","green","gray");
 $non-mobile-break: $iphone5 + $wider + $margin;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 .bubble{
   border-radius: 50%;
@@ -256,11 +263,12 @@ div#log{
   ul#log__list{
     padding: 0;
     li{
-    list-style: none;
-    padding: $margin;
-    background-color: $paper;
-      &:nth-child(odd){
-        background-color: mix($paper, whitesmoke);
+      text-align:center;
+      list-style: none;
+      padding: $margin;
+      background-color: $paper;
+        &:nth-child(odd){
+          background-color: mix($paper, whitesmoke);
       }
     }
   }
@@ -268,6 +276,9 @@ div#log{
     width: $bubble-size ;
     height: $bubble-size ;
     vertical-align: middle;
+    &.unknown{
+      border: 3px solid gray;
+    }
   }
 }
  

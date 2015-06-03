@@ -1,3 +1,9 @@
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 .bubble {
   border-radius: 50%;
   display: inline-block; }
@@ -23,6 +29,14 @@
     background-size: cover; }
   .bubble.potion-greenminus {
     background-color: green;
+    background-image: url("polarities/minus.png");
+    background-size: cover; }
+  .bubble.potion-grayplus {
+    background-color: gray;
+    background-image: url("polarities/plus.png");
+    background-size: cover; }
+  .bubble.potion-grayminus {
+    background-color: gray;
     background-image: url("polarities/minus.png");
     background-size: cover; }
   .bubble.potion-redgreenplus {
@@ -114,8 +128,8 @@ body {
     width: 100%;
     text-align: center; }
     .results-tree .results-tree__row div.bubble {
-      width: 28px;
-      height: 28px;
+      width: 35px;
+      height: 35px;
       overflow: hidden;
       line-height: 1;
       vertical-align: top; }
@@ -186,15 +200,18 @@ div#log {
   div#log ul#log__list {
     padding: 0; }
     div#log ul#log__list li {
+      text-align: center;
       list-style: none;
       padding: 5px;
       background-color: #DDC; }
       div#log ul#log__list li:nth-child(odd) {
         background-color: #e9e9e0; }
   div#log .bubble {
-    width: 28px;
-    height: 28px;
+    width: 35px;
+    height: 35px;
     vertical-align: middle; }
+    div#log .bubble.unknown {
+      border: 3px solid gray; }
 
 .results-tree__element.mushroom, .bubble.element.mushroom {
   background-image: url("ingredients/mushroom.png");

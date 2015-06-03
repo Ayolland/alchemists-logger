@@ -50,8 +50,7 @@ function sellPotion(){
 function debunkProof(){
   ingredient1 = selectorValue($("#debunk_proof__ingredient1")[0]);
   result = selectorValue($("#debunk_proof__result")[0]);
-  console.log(ingredient1,result);
-  hasComponent(ingredient1,result);
+  markResult(ingredient1,"unknown",result);
 };
 
 function selectorValue(selectTag){
@@ -88,7 +87,18 @@ function markResult(ingredient1,ingredient2,result){
   $targetBubble.addClass("potion-" + result);
   hasComponent(ingredient1,result);
   hasComponent(ingredient2,result);
+  logResult(ingredient1, ingredient2, result);
 };
+
+function logResult(ingredient1, ingredient2, result){
+  var openTag = "<li ing1=" + ingredient1 + " ing2=" + ingredient2 + " result=" + result + ">";
+  var bubble1 = "<div class= 'bubble element " + ingredient1 + "'></div>"
+  var bubble2 = "<div class= 'bubble element " + ingredient2 + "'></div>"
+  var resultBubble = "<div class= 'bubble potion-" + result + "'></div>"
+  var closeTag = "</li>"
+  var elementString = openTag + bubble1 + "&nbsp;+&nbsp;" + bubble2 + "&nbsp;=&nbsp;" + resultBubble + closeTag;
+  $(elementString).appendTo('#log__list');
+}
 
 function hasComponent(ingredient,colorPolarity){
   var opposites = {
