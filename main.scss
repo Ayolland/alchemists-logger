@@ -137,7 +137,7 @@ html {
     background-size: cover
   };
   &.ERROR, &.unknown{
-    background-image: url('polarities/unknown.png');
+    background-image: url('polarities/unknown.png') !important;
     background-size: cover;
   }
 }

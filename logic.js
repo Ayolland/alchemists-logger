@@ -135,6 +135,9 @@ function checkColRow(selector){
   if (($possibleBoxes.length == 1) && !($possibleBoxes.first().hasClass("true"))){
     $possibleBoxes.first().addClass("true");
   };
+  if ($possibleBoxes.length < 1){
+    $(".results-tree ." + selector).addClass("ERROR");
+  };
 };
 
 function checkForSolutions(selectorArray){

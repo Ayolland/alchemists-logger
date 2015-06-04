@@ -71,7 +71,7 @@ html {
     background-image: url("polarities/neutral.png");
     background-size: cover; }
   .bubble.ERROR, .bubble.unknown {
-    background-image: url("polarities/unknown.png");
+    background-image: url("polarities/unknown.png") !important;
     background-size: cover; }
 
 body {
