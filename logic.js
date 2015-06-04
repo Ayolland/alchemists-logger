@@ -20,6 +20,14 @@ $("#debunk_proof__submit").click(function(event){
   checkAllBoxes();
 });
 
+$("#log__edit").click(function(event){
+  $('.delete').toggleClass('edit')
+});
+
+function removeLogItem(child){
+  child.parent().remove();
+};
+
 function testPotion(){
   var ingredient1 = selectorValue($("#test_potion__ingredient1")[0]);
   var ingredient2 = selectorValue($("#test_potion__ingredient2")[0]);
@@ -96,8 +104,10 @@ function logResult(ingredient1, ingredient2, result){
   var bubble2 = "<div class= 'bubble element " + ingredient2 + "'></div>"
   var resultBubble = "<div class= 'bubble potion-" + result + "'></div>"
   var closeTag = "</li>"
-  var elementString = openTag + bubble1 + "&nbsp;+&nbsp;" + bubble2 + "&nbsp;=&nbsp;" + resultBubble + closeTag;
+  var deleteButton = "<div class='delete bubble'></div>"
+  var elementString = openTag + bubble1 + "&nbsp;+&nbsp;" + bubble2 + "&nbsp;=&nbsp;" + resultBubble + deleteButton + closeTag;
   $(elementString).appendTo('#log__list');
+  $(".delete").click(function(event){removeLogItem($(this))});
 }
 
 function hasComponent(ingredient,colorPolarity){

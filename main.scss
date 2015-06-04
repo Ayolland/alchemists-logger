@@ -245,7 +245,10 @@ body{
       }
     }
     .answer-grid__answer.guess{
-      border: 5px double #FFF;
+      border: 5px double #F0F;
+    }
+    .answer-grid__answer.true{
+      border: 2px solid #FFF;
     }
     .answer-grid__answer > img {
       margin: 3px;
@@ -260,6 +263,14 @@ div#log{
   @media screen and (min-width: $non-mobile-break) {
     top: ($iphone5 * .5) + $margin;
   }
+  h3{
+    position: relative;
+    button{
+      position: absolute;
+      right: $margin;
+    }
+  }
+  
   ul#log__list{
     padding: 0;
     li{
@@ -269,6 +280,18 @@ div#log{
       background-color: $paper;
         &:nth-child(odd){
           background-color: mix($paper, whitesmoke);
+      }
+      div.delete {
+        position: absolute;
+        right: $margin;
+        border: 3px solid white;
+        background-image: url('polarities/error.png');
+        background-size: cover;
+        display: none;
+        vertical-align: middle;
+        &.edit{
+          display: inline-block;
+        }
       }
     }
   }
@@ -281,5 +304,7 @@ div#log{
     }
   }
 }
+
+
  
 @include results($ingredient-colors);
