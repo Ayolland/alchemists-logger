@@ -104,7 +104,9 @@ function markResult(ingredient1,ingredient2,result){
 };
 
 function logResult(ingredient1, ingredient2, result){
-  var openTag = "<li ing1=" + ingredient1 + " ing2=" + ingredient2 + " result=" + result + ">";
+  $('.delete').removeClass('edit')
+  var attributes = "ing1='" + ingredient1 + "' ing2='" + ingredient2 + "' result='" + result + "'"
+  var openTag = "<li class='" + ingredient1 + " " + ingredient2 + "'" + attributes + " >";
   var bubble1 = "<div class= 'bubble element " + ingredient1 + "'></div>"
   var bubble2 = "<div class= 'bubble element " + ingredient2 + "'></div>"
   var resultBubble = "<div class= 'bubble potion-" + result + "'></div>"
@@ -163,14 +165,32 @@ function checkForSolutions(selectorArray){
 
 function checkBig(){
   $.each(ingredients, function(i,ingredient){
-    var $elementBoxes = $(".answer-grid__answer ." + ingredient);
-
+    var $possibleBoxes = $(".answer-grid__answer." + ingredient).not(".false");
+    var $elementLogEntries = $("#log__list li." + ingredient);
+    $.each(colors, function(j,color){
+      if ($possibleBoxes.filter("." + color + "big").length == 0){
+        $elementLogEntries.each(function(k,entry){
+          var entryColorLetter = $(entry).attr('result').slice(0,1);
+          var otherIngredient = ""
+          if ($(entry).attr('ing1') == ingredient){
+            otherIngredient = $(entry).attr('ing2');
+          } else {
+            otherIngredient = $(entry).attr('ing1')
+          }
+          var thisColorLetter = color.slice(0,1);
+          if (entryColorLetter == thisColorLetter){
+            $(".answer-grid__answer." + otherIngredient).not("." + color + "big").addClass('false');
+          }
+        })
+      }
+    })
   })
 }
 
 function checkAllBoxes(){
   while (madeChanges == true){
     madeChanges = false;
+    checkBig();
     checkForSolutions(ingredients);
     checkForSolutions(elements);
   };
@@ -189,4 +209,11 @@ function rebuildFromLog(){
     var result = $(entry).attr('result');
     markResult(ingredient1,ingredient2,result);
   })
+}
+
+function testBuilder(){
+  markResult("mushroom","fern","redminus");
+  logResult("mushroom","fern","redminus");
+  markResult("mushroom", "toad", "blueplus");
+  logResult("mushroom", "toad", "blueplus");
 }
