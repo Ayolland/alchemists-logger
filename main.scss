@@ -161,8 +161,7 @@ body{
     padding: 0 5px;
   }
   p{
-    padding: $margin;
-    padding-bottom: $margin * 2;
+    padding: 0 $margin ($margin * 2) $margin;
     margin: $margin;
   }
   .about__content{
@@ -170,6 +169,15 @@ body{
     overflow: hidden;
     -webkit-transition: height 1s;
     transition: max-height 1s;
+    a{
+      color: darken(sienna, 10%);
+    }
+    a:active{
+      color: white;
+    };
+    a:visited{
+      color: mix(black, $paper);
+    };
   }
   &.show{
     a#what::after {

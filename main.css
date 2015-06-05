@@ -105,14 +105,19 @@ body {
     font-size: 10px;
     padding: 0 5px; }
   .about p {
-    padding: 5px;
-    padding-bottom: 10px;
+    padding: 0 5px 10px 5px;
     margin: 5px; }
   .about .about__content {
     max-height: 0;
     overflow: hidden;
     -webkit-transition: height 1s;
     transition: max-height 1s; }
+    .about .about__content a {
+      color: #783e22; }
+    .about .about__content a:active {
+      color: white; }
+    .about .about__content a:visited {
+      color: #6e6e66; }
   .about.show a#what::after {
     content: "\25B2"; }
   .about.show .about__content {
