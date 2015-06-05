@@ -7,6 +7,14 @@ html {
 .bubble {
   border-radius: 50%;
   display: inline-block; }
+  .bubble.potion-grayplus {
+    background-color: gray;
+    background-image: url("polarities/plus.png");
+    background-size: cover; }
+  .bubble.potion-grayminus {
+    background-color: gray;
+    background-image: url("polarities/minus.png");
+    background-size: cover; }
   .bubble.potion-redplus {
     background-color: red;
     background-image: url("polarities/plus.png");
@@ -29,14 +37,6 @@ html {
     background-size: cover; }
   .bubble.potion-greenminus {
     background-color: green;
-    background-image: url("polarities/minus.png");
-    background-size: cover; }
-  .bubble.potion-grayplus {
-    background-color: gray;
-    background-image: url("polarities/plus.png");
-    background-size: cover; }
-  .bubble.potion-grayminus {
-    background-color: gray;
     background-image: url("polarities/minus.png");
     background-size: cover; }
   .bubble.potion-redgreenplus {
@@ -83,6 +83,41 @@ body {
       position: relative;
       margin: 0 auto; } }
 
+.about {
+  background: #bebe9e;
+  width: 100%;
+  max-width: 480px;
+  margin: 5px auto;
+  padding: 5px;
+  z-index: 2; }
+  @media screen and (min-width: 805px) {
+    .about {
+      position: absolute;
+      width: 480px;
+      left: 325px; } }
+  .about h3 {
+    text-align: center;
+    margin: 5px auto;
+    font-size: 15px;
+    text-transform: uppercase; }
+  .about a#what::after {
+    content: "\25BC";
+    font-size: 10px;
+    padding: 0 5px; }
+  .about p {
+    padding: 5px;
+    padding-bottom: 10px;
+    margin: 5px; }
+  .about .about__content {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: height 1s;
+    transition: max-height 1s; }
+  .about.show a#what::after {
+    content: "\25B2"; }
+  .about.show .about__content {
+    max-height: 1200px; }
+
 .controls {
   background: #bebe9e;
   width: 100%;
@@ -102,7 +137,7 @@ body {
   @media screen and (min-width: 805px) {
     .controls {
       position: absolute;
-      top: 5px; } }
+      top: 44px; } }
   .controls .control-group {
     text-align: center;
     width: 100%; }
@@ -198,7 +233,7 @@ div#log {
     text-transform: uppercase; }
   @media screen and (min-width: 805px) {
     div#log {
-      top: 165px; } }
+      top: 200px; } }
   div#log h3 {
     position: relative; }
     div#log h3 button {

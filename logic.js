@@ -3,6 +3,10 @@ var elements = ["type1","type2","type3","type4","type5","type6","type7","type8"]
 var colors = ["red","blue","green"];
 var madeChanges = false;
 
+$("#what").click(function(event){
+  $(".about").toggleClass("show")
+})
+
 $("#test_potion__submit").click(function(event){
   event.preventDefault();
   testPotion();
@@ -212,8 +216,8 @@ function rebuildFromLog(){
 }
 
 function testBuilder(){
-  markResult("mushroom","fern","redminus");
-  logResult("mushroom","fern","redminus");
-  markResult("mushroom", "toad", "blueplus");
-  logResult("mushroom", "toad", "blueplus");
+  // markResult("mushroom","fern","redminus");
+  // logResult("mushroom","fern","redminus");
+  // markResult("mushroom", "toad", "blueplus");
+  // logResult("mushroom", "toad", "blueplus");
 }

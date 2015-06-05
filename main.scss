@@ -152,12 +152,41 @@ body{
   }
 }
 
+.about{
+  @include pop-block;
+  z-index: 2;
+  a#what::after {
+    content: "\25BC";
+    font-size: 10px;
+    padding: 0 5px;
+  }
+  p{
+    padding: $margin;
+    padding-bottom: $margin * 2;
+    margin: $margin;
+  }
+  .about__content{
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: height 1s;
+    transition: max-height 1s;
+  }
+  &.show{
+    a#what::after {
+      content: "\25B2";
+    }
+    .about__content{
+      max-height: 1200px;
+    }
+  }
+}
+
 .controls{
   @include pop-block;
   
   @media screen and (min-width: $non-mobile-break) {
     position: absolute;
-    top: $margin;
+    top: 44px;
   }
   .control-group{
     text-align: center;
@@ -261,7 +290,7 @@ body{
 div#log{
   @include pop-block;
   @media screen and (min-width: $non-mobile-break) {
-    top: ($iphone5 * .5) + $margin;
+    top: 200px;
   }
   h3{
     position: relative;
