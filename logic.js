@@ -1,5 +1,6 @@
 var ingredients = ["mushroom","fern","toad","foot","flower","root","scorpion","feather"];
 var elements = ["type1","type2","type3","type4","type5","type6","type7","type8"];
+var colors = ["red","blue","green"];
 var madeChanges = false;
 
 $("#test_potion__submit").click(function(event){
@@ -26,6 +27,8 @@ $("#log__edit").click(function(event){
 
 function removeLogItem(child){
   child.parent().remove();
+  clearResults();
+  rebuildFromLog();
 };
 
 function testPotion(){
@@ -35,6 +38,7 @@ function testPotion(){
   var result = selectorValue($("#test_potion__result")[0]);
   console.log(ingredient1,ingredient2,result);
   markResult(ingredient1,ingredient2,result);
+  logResult(ingredient1, ingredient2, result);
 };
 
 function sellPotion(){
@@ -53,12 +57,14 @@ function sellPotion(){
   }
   var result = resultMatrix[target][pseudoResult]
   markResult(ingredient1,ingredient2,result);
+  logResult(ingredient1, ingredient2, result);
 };
 
 function debunkProof(){
   ingredient1 = selectorValue($("#debunk_proof__ingredient1")[0]);
   result = selectorValue($("#debunk_proof__result")[0]);
   markResult(ingredient1,"unknown",result);
+  logResult(ingredient1, "unknown", result);
 };
 
 function selectorValue(selectTag){
@@ -95,7 +101,6 @@ function markResult(ingredient1,ingredient2,result){
   $targetBubble.addClass("potion-" + result);
   hasComponent(ingredient1,result);
   hasComponent(ingredient2,result);
-  logResult(ingredient1, ingredient2, result);
 };
 
 function logResult(ingredient1, ingredient2, result){
@@ -156,10 +161,32 @@ function checkForSolutions(selectorArray){
   };
 }
 
+function checkBig(){
+  $.each(ingredients, function(i,ingredient){
+    var $elementBoxes = $(".answer-grid__answer ." + ingredient);
+
+  })
+}
+
 function checkAllBoxes(){
   while (madeChanges == true){
     madeChanges = false;
     checkForSolutions(ingredients);
     checkForSolutions(elements);
   };
+}
+
+function clearResults(){
+  var allResults = "potion-redplus potion-redminus potion-greenplus potion-greenminus potion-blueplus potion-blueminus potion-redgreenplus potion-redgreenminus potion-greenblueplus potion-greenblueminus potion-blueredplus potion-blueredminus potion-grayplus potion-grayminus potion-neutral true false ERROR";
+  $(".results-tree__row .bubble, .answer-grid__answer").removeClass(allResults);
+}
+
+function rebuildFromLog(){
+  var $logEntries = $('#log__list li');
+  $logEntries.each(function(i,entry){
+    var ingredient1 = $(entry).attr('ing1');
+    var ingredient2 = $(entry).attr('ing2');
+    var result = $(entry).attr('result');
+    markResult(ingredient1,ingredient2,result);
+  })
 }

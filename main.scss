@@ -116,7 +116,7 @@ $gradients:(
   "green" "blue" "red",
   "blue" "red" "green"
 );
-$rgb: ("red","blue","green","gray");
+$rgb: ("gray","red","blue","green");
 $non-mobile-break: $iphone5 + $wider + $margin;
 
 html {
